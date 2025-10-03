@@ -24,7 +24,8 @@ dist-ssr
 *.sw?
 
 # Assets
-src/assets/
+src/assets/casual-attire.png
+src/assets/profile-picture.png
 
 # Configuration files
 eslint.config.js

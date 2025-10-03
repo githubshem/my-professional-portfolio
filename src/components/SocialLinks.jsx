@@ -1,11 +1,13 @@
 import { FiGithub, FiLinkedin, FiTwitter, FiCodepen } from 'react-icons/fi';
+import { SiSubstack } from 'react-icons/si';
 
 const SocialLinks = () => {
   const socialLinks = [
     { icon: FiGithub, url: 'https://github.com/githubshem', label: 'GitHub' },
     { icon: FiLinkedin, url: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: FiTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
-    { icon: FiCodepen, url: 'https://codepen.io/yourusername', label: 'CodePen' },
+    { icon: SiSubstack, url: 'https://yourusername.substack.com', label: 'Substack' },
+    // { icon: FiTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
+    // { icon: FiCodepen, url: 'https://codepen.io/yourusername', label: 'CodePen' },
   ];
 
   return (
