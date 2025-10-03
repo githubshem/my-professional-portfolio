@@ -1,18 +1,19 @@
-import { FiCode, FiServer, FiDatabase } from 'react-icons/fi';
+import { FiCode, FiServer, FiCloud } from 'react-icons/fi';
 import profilePic from '../assets/profile-picture.png';
 
 const About = () => {
   const skills = [
-    'JavaScript (ES6+)',
-    'React.js',
-    'Node.js',
-    'TypeScript',
+    'AWS',
+    'Kubernetes',
     'Python',
+    'PowerShell',
+    'Terraform',
     'MongoDB',
-    'PostgreSQL',
+    'NGINX',
     'Git & GitHub',
-    'Tailwind CSS',
-    'REST APIs',
+    'React.js',
+    'APIs',
+    'Change Management',
   ];
 
   return (
@@ -54,12 +55,12 @@ const About = () => {
           {/* About Text */}
           <div className="md:col-span-2 space-y-4 text-slate">
             <p>
-              Hello! I'm [Your Name], a passionate full-stack developer based in [Your Location].
+              Hello! I'm Shem Sumbeling, a passionate DevOps Engineer based in Manila, Philippines.
               I enjoy creating things that live on the internet, whether that be websites,
               applications, or anything in between.
             </p>
             <p>
-              My interest in web development started back in [Year] when I decided to try
+              My interest in DevOps started back in 2019 when I decided to try
               editing custom themes — turns out hacking together HTML & CSS taught me a lot
               about web development!
             </p>
@@ -99,10 +100,10 @@ const About = () => {
           </div>
 
           <div className="bg-light-midnight p-6 rounded-lg border border-neon-cyan/30 hover:border-neon-cyan hover:transform hover:-translate-y-2 transition-all" style={{boxShadow: '0 0 20px rgba(5, 217, 232, 0.1)'}}>
-            <FiDatabase className="text-neon-cyan text-4xl mb-4" style={{filter: 'drop-shadow(0 0 10px rgba(5, 217, 232, 0.8))'}} />
-            <h3 className="text-lightest-slate font-bold text-lg mb-2">Database Design</h3>
+            <FiCloud className="text-neon-cyan text-4xl mb-4" style={{filter: 'drop-shadow(0 0 10px rgba(5, 217, 232, 0.8))'}} />
+            <h3 className="text-lightest-slate font-bold text-lg mb-2">Cloud & Infrastructure</h3>
             <p className="text-slate text-sm">
-              Designing and managing efficient database systems
+              Architecting and automating scalable cloud infrastructure with IaC
             </p>
           </div>
         </div>

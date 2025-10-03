@@ -31,7 +31,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <a href="#" className="text-neon-pink text-2xl font-mono font-bold hover:text-neon-purple transition-colors neon-text">
-            &lt;YN /&gt;
+            &lt;DevOps Engineer /&gt;
           </a>
 
           {/* Desktop Navigation */}

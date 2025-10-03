@@ -14,7 +14,7 @@ const Contact = () => {
             back to you!
           </p>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:shemsumbelingforwork@gmail.com"
             className="inline-block px-7 py-5 border border-green text-green rounded font-mono text-sm hover:bg-green/10 transition-all"
           >
             Say Hello

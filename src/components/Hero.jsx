@@ -10,16 +10,16 @@ const Hero = () => {
               Hi, my name is
             </h1>
             <h2 className="text-lightest-slate font-bold text-4xl md:text-6xl lg:text-7xl mb-3" style={{textShadow: '0 0 20px rgba(255, 0, 110, 0.5), 0 0 40px rgba(185, 28, 46, 0.3)'}}>
-              Your Name.
+              Shem Sumbeling
             </h2>
             <h3 className="text-neon-purple font-bold text-3xl md:text-5xl lg:text-6xl mb-5" style={{textShadow: '0 0 20px rgba(185, 103, 255, 0.6)'}}>
-              I build things for the web.
+              I use Terraform and Python to automate.
             </h3>
             <p className="text-slate max-w-2xl text-base md:text-lg leading-relaxed mb-12">
-              I'm a full-stack developer specializing in building exceptional digital experiences.
-              Currently, I'm focused on building accessible, human-centered products at{' '}
+              I am a DevOps Engineer specializing in cloud and platform development, utilizing an AI-native approach to meet developer requirements in less friction.
+              Currently, my focus is on minimizing deployment duration and errors to ensure an efficient and seamless process by enhancing the existing automated processes at {' '}
               <a href="#" className="text-neon-cyan hover:text-neon-pink transition-colors neon-text">
-                @Company
+                @Amadeus
               </a>
               .
             </p>

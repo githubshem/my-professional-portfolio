@@ -25,12 +25,12 @@ const Footer = () => {
         ))}
       </div>
       <a
-        href="https://github.com/yourusername"
+        href="https://github.com/githubshem"
         target="_blank"
         rel="noopener noreferrer"
         className="text-slate hover:text-green font-mono text-sm transition-colors"
       >
-        <p>Built by Your Name</p>
+        <p>Built by Shem Sumbeling</p>
         <p className="mt-2">Inspired by Brittany Chiang</p>
       </a>
     </footer>

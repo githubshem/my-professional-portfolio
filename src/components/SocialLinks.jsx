@@ -2,7 +2,7 @@ import { FiGithub, FiLinkedin, FiTwitter, FiCodepen } from 'react-icons/fi';
 
 const SocialLinks = () => {
   const socialLinks = [
-    { icon: FiGithub, url: 'https://github.com/yourusername', label: 'GitHub' },
+    { icon: FiGithub, url: 'https://github.com/githubshem', label: 'GitHub' },
     { icon: FiLinkedin, url: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
     { icon: FiTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
     { icon: FiCodepen, url: 'https://codepen.io/yourusername', label: 'CodePen' },
