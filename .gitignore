@@ -23,17 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
-# Assets
+# Personal Assets (keep private)
 src/assets/casual-attire.png
 src/assets/profile-picture.png
 
-# Configuration files
-eslint.config.js
-index.html
-package-lock.json
-package.json
-postcss.config.js
-tailwind.config.js
-tailwind.config.js.jsx.bk
-vite.config.js
-vite.config.js.bk
+# Backup files
+*.bk
+*.backup
