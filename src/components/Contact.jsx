@@ -6,18 +6,18 @@ const Contact = () => {
             04. What's Next?
           </h2>
           <h3 className="text-lightest-slate font-bold text-4xl md:text-5xl mb-5">
-            Get In Touch
+            Please get in touch!
           </h3>
           <p className="text-slate text-lg leading-relaxed mb-12">
             I'm currently looking for new opportunities, and my inbox is always open.
-            Whether you have a question or just want to say hi, I'll try my best to get
-            back to you!
+            {/* Whether you have a question or just want to say hi, I'll try my best to get
+            back to you! */}
           </p>
           <a
             href="mailto:shemsumbelingforwork@gmail.com"
             className="inline-block px-7 py-5 border border-green text-green rounded font-mono text-sm hover:bg-green/10 transition-all"
           >
-            Say Hello
+            Send me an email!
           </a>
         </div>
       </section>

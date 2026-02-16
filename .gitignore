@@ -28,12 +28,12 @@ src/assets/casual-attire.png
 src/assets/profile-picture.png
 
 # Configuration files
-eslint.config.js
-index.html
-package-lock.json
-package.json
-postcss.config.js
-tailwind.config.js
-tailwind.config.js.jsx.bk
-vite.config.js
-vite.config.js.bk
+# eslint.config.js
+# index.html
+# package-lock.json
+# package.json
+# postcss.config.js
+# tailwind.config.js
+# tailwind.config.js.jsx.bk
+# vite.config.js
+# vite.config.js.bk
