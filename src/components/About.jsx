@@ -4,16 +4,29 @@ import profilePic from '../assets/profile-picture.png';
 const About = () => {
   const skills = [
     'AWS',
+    'Google Cloud Platform',
+    'Microsoft Azure',
     'Kubernetes',
     'Python',
-    'PowerShell',
     'Terraform',
-    'MongoDB',
+    'PowerShell',
     'NGINX',
+    'MongoDB',
     'Git & GitHub',
     'React.js',
     'APIs',
     'Change Management',
+    'Change Management',
+    'Change Management',
+    'Change Management',
+    'Change Management',
+    'Change Management',
+    'Change Management',
+    'Change Management',
+    'Change Management',
+    'Change Management',
+    'Change Management',
+
   ];
 
   return (
