@@ -3,31 +3,33 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
+      title: 'Deployment Scripts',
       description:
         'A full-featured e-commerce platform with user authentication, product management, shopping cart, and payment integration. Built with React, Node.js, Express, and MongoDB.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
-      github: 'https://github.com/yourusername/project1',
-      external: 'https://project1.com',
+      //tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
+      tech: ['PowerShell', 'EC2 Instances', 'Service Fabric', 'GitHub'],
+      github: 'https://github.com/githubshem/deployment-tools',
+      //external: 'https://project1.com',
       image: 'https://via.placeholder.com/600x400?text=E-Commerce+Platform',
     },
     {
-      title: 'Task Management App',
+      title: 'YouTrack Ticket Creation',
       description:
         'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features. Inspired by Trello and Asana.',
-      tech: ['React', 'Firebase', 'Material-UI', 'Redux'],
+      //tech: ['React', 'Firebase', 'Material-UI', 'Redux'],
+      tech: ['JetBrains YouTrack', 'Python', 'GitHub'],
       github: 'https://github.com/yourusername/project2',
-      external: 'https://project2.com',
-      image: 'https://via.placeholder.com/600x400?text=Task+Manager',
+      //external: 'https://project2.com',
+      //image: 'https://via.placeholder.com/600x400?text=Task+Manager',
     },
     {
-      title: 'Weather Dashboard',
+      title: 'RDP into multiple nodes using Powershell Script',
       description:
         'A beautiful weather dashboard that displays current weather conditions and forecasts for multiple cities. Features include geolocation, favorites, and detailed weather metrics.',
       tech: ['React', 'OpenWeather API', 'Chart.js', 'CSS3'],
       github: 'https://github.com/yourusername/project3',
-      external: 'https://project3.com',
-      image: 'https://via.placeholder.com/600x400?text=Weather+Dashboard',
+      //external: 'https://project3.com',
+      //image: 'https://via.placeholder.com/600x400?text=Weather+Dashboard',
     },
   ];
 
