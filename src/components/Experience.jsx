@@ -5,9 +5,9 @@ const Experience = () => {
 
   const experiences = [
     {
-      company: 'Company One',
-      position: 'Senior Full Stack Developer',
-      duration: 'Jan 2023 - Present',
+      company: 'Amadeus',
+      position: 'Automation and Deployment Engineer (DevOps Engineer)',
+      duration: 'Aug 2024 - Nov 2025',
       url: 'https://company1.com',
       responsibilities: [
         'Led development of customer-facing web applications using React and Node.js',
@@ -17,9 +17,9 @@ const Experience = () => {
       ],
     },
     {
-      company: 'Company Two',
-      position: 'Full Stack Developer',
-      duration: 'Jun 2021 - Dec 2022',
+      company: 'Dynasty Gaming and Media',
+      position: 'Technical Operations Engineer',
+      duration: 'Jan 2023 - Nov 2023',
       url: 'https://company2.com',
       responsibilities: [
         'Developed and maintained multiple client projects using modern web technologies',
@@ -29,9 +29,9 @@ const Experience = () => {
       ],
     },
     {
-      company: 'Company Three',
-      position: 'Junior Developer',
-      duration: 'Jan 2020 - May 2021',
+      company: 'F45 Training',
+      position: 'L2 Technical Support Engineer',
+      duration: 'May 2021 - Jan 2023',
       url: 'https://company3.com',
       responsibilities: [
         'Built responsive websites and web applications from scratch',
