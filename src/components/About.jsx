@@ -1,4 +1,5 @@
-import { FiCode, FiServer, FiCloud } from 'react-icons/fi';
+import { FiCode, FiCloud, FiCpu } from 'react-icons/fi';
+import { RiRobot2Line } from 'react-icons/ri';
 import profilePic from '../assets/profile-picture.png';
 
 const About = () => {
@@ -26,12 +27,11 @@ const About = () => {
     'Node.js',
     'Change Management',
     'Leadership',
-
   ];
 
   return (
     <section id="about" className="py-24">
-      <div className="max-w-4xl">
+      <div className="max-w-6xl">
         <h2 className="section-heading">
           <span className="section-number">01.</span>
           About Me
@@ -68,13 +68,13 @@ const About = () => {
           {/* About Text */}
           <div className="md:col-span-2 space-y-4 text-slate">
             <p>
-              Hello! I'm Shem Sumbeling, a passionate DevOps Engineer based in Manila, Philippines.
-              I enjoy creating things that live on the internet, whether that be websites,
+              Hello! I'm Shem Sumbeling, a passionate Engineer based in Manila, Philippines.
+              I enjoy creating and fixing things that live on the internet, whether that be websites,
               applications, or anything in between.
             </p>
             <p>
-              My interest in DevOps started back in 2019 when I decided to try
-              editing custom themes — turns out hacking together HTML & CSS taught me a lot
+              My interest in tech started back in 2004 when I decided to try
+              editing custom themes from Friendster — turns out hacking together HTML & CSS taught me a lot
               about web development!
             </p>
             <p>
@@ -95,20 +95,20 @@ const About = () => {
           ))}
         </div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           <div className="bg-light-midnight p-6 rounded-lg border border-neon-pink/30 hover:border-neon-pink hover:transform hover:-translate-y-2 transition-all" style={{boxShadow: '0 0 20px rgba(255, 0, 110, 0.1)'}}>
-            <FiCode className="text-neon-pink text-4xl mb-4" style={{filter: 'drop-shadow(0 0 10px rgba(255, 0, 110, 0.8))'}} />
-            <h3 className="text-lightest-slate font-bold text-lg mb-2">Frontend Development</h3>
+            <RiRobot2Line className="text-neon-pink text-4xl mb-4" style={{filter: 'drop-shadow(0 0 10px rgba(255, 0, 110, 0.8))'}} />
+            <h3 className="text-lightest-slate font-bold text-lg mb-2">Artificial Intelligence</h3>
             <p className="text-slate text-sm">
-              Creating responsive and interactive user interfaces with modern frameworks
+              Implementing MCP servers and schema‑driven tools to integrate LLMs with real systems
             </p>
           </div>
 
           <div className="bg-light-midnight p-6 rounded-lg border border-neon-purple/30 hover:border-neon-purple hover:transform hover:-translate-y-2 transition-all" style={{boxShadow: '0 0 20px rgba(185, 103, 255, 0.1)'}}>
-            <FiServer className="text-neon-purple text-4xl mb-4" style={{filter: 'drop-shadow(0 0 10px rgba(185, 103, 255, 0.8))'}} />
+            <FiCode className="text-neon-purple text-4xl mb-4" style={{filter: 'drop-shadow(0 0 10px rgba(185, 103, 255, 0.8))'}} />
             <h3 className="text-lightest-slate font-bold text-lg mb-2">Backend Development</h3>
             <p className="text-slate text-sm">
-              Building scalable server-side applications and RESTful APIs
+              Building and maintaining scalable server-side applications and RESTful APIs
             </p>
           </div>
 
@@ -116,7 +116,15 @@ const About = () => {
             <FiCloud className="text-neon-cyan text-4xl mb-4" style={{filter: 'drop-shadow(0 0 10px rgba(5, 217, 232, 0.8))'}} />
             <h3 className="text-lightest-slate font-bold text-lg mb-2">Cloud & Infrastructure</h3>
             <p className="text-slate text-sm">
-              Architecting and automating scalable cloud infrastructure with IaC
+              Architecting, implementing, and automating scalable cloud infrastructure
+            </p>
+          </div>
+
+          <div className="bg-light-midnight p-6 rounded-lg border border-neon-magenta/30 hover:border-neon-magenta hover:transform hover:-translate-y-2 transition-all" style={{boxShadow: '0 0 20px rgba(255, 20, 147, 0.1)'}}>
+            <FiCpu className="text-neon-magenta text-4xl mb-4" style={{filter: 'drop-shadow(0 0 10px rgba(255, 20, 147, 0.8))'}} />
+            <h3 className="text-lightest-slate font-bold text-lg mb-2">Edge Devices</h3>
+            <p className="text-slate text-sm">
+              Managing self-service kiosk and bag drop fleets with deployment automation and monitoring
             </p>
           </div>
         </div>
