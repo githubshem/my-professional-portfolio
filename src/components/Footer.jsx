@@ -4,7 +4,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: FiGithub, url: 'https://github.com/yourusername', label: 'GitHub' },
     { icon: FiLinkedin, url: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: FiTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
+    // { icon: FiTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
     { icon: FiMail, url: 'mailto:your.email@example.com', label: 'Email' },
   ];
 
