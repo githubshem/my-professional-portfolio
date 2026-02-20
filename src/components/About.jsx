@@ -25,8 +25,6 @@ const About = () => {
     'CI/CD',
     'Golang',
     'Node.js',
-    'Change Management',
-    'Leadership',
   ];
 
   return (
