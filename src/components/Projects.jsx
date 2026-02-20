@@ -5,7 +5,7 @@ const Projects = () => {
     {
       title: 'Deployment Scripts',
       description:
-        'A full-featured e-commerce platform with user authentication, product management, shopping cart, and payment integration. Built with React, Node.js, Express, and MongoDB.',
+        'Internal deployment automation scripts built at my previous employer to streamline releases, reduce manual steps, and improve consistency across environments.',
       //tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
       tech: ['PowerShell', 'PDQ Deploy', 'GitHub'],
       github: 'https://github.com/githubshem/deployment-tools',
@@ -15,9 +15,9 @@ const Projects = () => {
     {
       title: 'YouTrack Ticket Creation',
       description:
-        'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features. Inspired by Trello and Asana.',
+        'An internal automation script my team and I used daily to streamline administrative tasks and reduce operational friction.',
       //tech: ['React', 'Firebase', 'Material-UI', 'Redux'],
-      tech: ['JetBrains YouTrack', 'Python', 'GitHub'],
+      tech: ['JetBrains YouTrack', 'Python', 'Change Management', 'Leadership', 'GitHub'],
       github: 'https://github.com/githubshem/deployment-tools',
       //external: 'https://project2.com',
       //image: 'https://via.placeholder.com/600x400?text=Task+Manager',
@@ -25,7 +25,7 @@ const Projects = () => {
     {
       title: 'RDP into multiple nodes using Powershell Script',
       description:
-        'A beautiful weather dashboard that displays current weather conditions and forecasts for multiple cities. Features include geolocation, favorites, and detailed weather metrics.',
+        'A personal PowerShell automation script that cuts down repetitive logins by streamlining Windows Server access across multiple nodes.',
       tech: ['RDP', 'PowerShell', 'Amazon EC2', 'GitHub', 'Windows Server 2022'],
       github: 'https://github.com/githubshem/deployment-tools',
       //external: 'https://project3.com',
