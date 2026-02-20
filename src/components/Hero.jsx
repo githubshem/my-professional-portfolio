@@ -18,7 +18,7 @@ const Hero = () => {
             <p className="text-slate max-w-2xl text-base md:text-lg leading-relaxed mb-12">
               I am an engineer specializing in cloud and platform development, utilizing an AI-native approach to meet developer requirements in less friction.
               Currently, my focus is on minimizing deployment duration and errors to ensure an efficient and seamless process by enhancing the existing automated processes at {' '}
-              <a href="#" className="text-neon-cyan hover:text-neon-pink transition-colors neon-text">
+              <a href="https://amadeus.com/" className="text-neon-cyan hover:text-neon-pink transition-colors neon-text">
                 @Amadeus
               </a>
               .

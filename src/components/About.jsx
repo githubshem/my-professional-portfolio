@@ -66,19 +66,18 @@ const About = () => {
           {/* About Text */}
           <div className="md:col-span-2 space-y-4 text-slate">
             <p>
-              Hello! I'm Shem Sumbeling, a passionate Engineer based in Manila, Philippines.
+              Hello! I'm Shem Sumbeling, a passionate engineer based in Manila, Philippines.
               I enjoy creating and fixing things that live on the internet, whether that be websites,
               applications, or anything in between.
             </p>
             <p>
-              My interest in tech started back in 2004 when I decided to try
-              editing custom themes from Friendster — turns out hacking together HTML & CSS taught me a lot
-              about web development!
+              My interest in tech grew when I realized how fast it was evolving, and 
+              I wanted to be part of building what comes next. That curiosity 
+              pushed me to keep learning, experimenting, and turning ideas into real systems.
             </p>
             <p>
-              Fast-forward to today, and I've had the privilege of working at a variety of
-              companies and projects. My main focus these days is building accessible,
-              inclusive products and digital experiences.
+              Fast-forward to today, I'm working across companies in different industries and technologies, 
+              continuing the goal I set years ago—learning nonstop as the industry keeps evolving.
             </p>
             <p>Here are a few technologies I've been working with recently:</p>
           </div>
