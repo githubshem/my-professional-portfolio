@@ -3,7 +3,7 @@ const Contact = () => {
       <section id="contact" className="py-24 min-h-screen flex items-center justify-center">
         <div className="max-w-2xl text-center">
           <h2 className="text-green font-mono text-base md:text-lg mb-5">
-            04. What's Next?
+            05. What's Next?
           </h2>
           <h3 className="text-lightest-slate font-bold text-4xl md:text-5xl mb-5">
             Please get in touch!
