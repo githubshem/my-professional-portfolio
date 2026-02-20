@@ -2,8 +2,8 @@ import { FiGithub, FiLinkedin, FiTwitter, FiMail } from 'react-icons/fi';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: FiGithub, url: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: FiLinkedin, url: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
+    { icon: FiGithub, url: 'https://github.com/githubshem', label: 'GitHub' },
+    { icon: FiLinkedin, url: 'https://www.linkedin.com/in/ssum/', label: 'LinkedIn' },
     // { icon: FiTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
     { icon: FiMail, url: 'mailto:your.email@example.com', label: 'Email' },
   ];
