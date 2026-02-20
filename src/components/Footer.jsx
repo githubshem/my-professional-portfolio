@@ -5,7 +5,7 @@ const Footer = () => {
     { icon: FiGithub, url: 'https://github.com/githubshem', label: 'GitHub' },
     { icon: FiLinkedin, url: 'https://www.linkedin.com/in/ssum/', label: 'LinkedIn' },
     // { icon: FiTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
-    { icon: FiMail, url: 'mailto:your.email@example.com', label: 'Email' },
+    { icon: FiMail, url: 'mailto:shemsumbelingforwork@gmail.com', label: 'Email' },
   ];
 
   return (
