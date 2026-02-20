@@ -7,7 +7,7 @@ const Projects = () => {
       description:
         'A full-featured e-commerce platform with user authentication, product management, shopping cart, and payment integration. Built with React, Node.js, Express, and MongoDB.',
       //tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
-      tech: ['PowerShell', 'EC2 Instances', 'Service Fabric', 'GitHub'],
+      tech: ['PowerShell', 'PDQ Deploy', 'GitHub'],
       github: 'https://github.com/githubshem/deployment-tools',
       //external: 'https://project1.com',
       image: 'https://via.placeholder.com/600x400?text=E-Commerce+Platform',
@@ -18,7 +18,7 @@ const Projects = () => {
         'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features. Inspired by Trello and Asana.',
       //tech: ['React', 'Firebase', 'Material-UI', 'Redux'],
       tech: ['JetBrains YouTrack', 'Python', 'GitHub'],
-      github: 'https://github.com/yourusername/project2',
+      github: 'https://github.com/githubshem/deployment-tools',
       //external: 'https://project2.com',
       //image: 'https://via.placeholder.com/600x400?text=Task+Manager',
     },
@@ -26,8 +26,8 @@ const Projects = () => {
       title: 'RDP into multiple nodes using Powershell Script',
       description:
         'A beautiful weather dashboard that displays current weather conditions and forecasts for multiple cities. Features include geolocation, favorites, and detailed weather metrics.',
-      tech: ['React', 'OpenWeather API', 'Chart.js', 'CSS3'],
-      github: 'https://github.com/yourusername/project3',
+      tech: ['RDP', 'PowerShell', 'Amazon EC2', 'GitHub', 'Windows Server 2022'],
+      github: 'https://github.com/githubshem/deployment-tools',
       //external: 'https://project3.com',
       //image: 'https://via.placeholder.com/600x400?text=Weather+Dashboard',
     },
@@ -50,7 +50,7 @@ const Projects = () => {
               } gap-8 items-center`}
             >
               {/* Project Image */}
-              <div className="w-full md:w-3/5 relative group">
+              {/* <div className="w-full md:w-3/5 relative group">
                 <a
                   href={project.external}
                   target="_blank"
@@ -64,7 +64,7 @@ const Projects = () => {
                     className="w-full h-auto rounded-lg"
                   />
                 </a>
-              </div>
+              </div> */}
 
               {/* Project Details */}
               <div className={`w-full md:w-2/5 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
@@ -101,7 +101,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="hover:text-green transition-colors"
                   >
-                    <FiExternalLink className="text-2xl" />
+                    {/* <FiExternalLink className="text-2xl" /> */}
                   </a>
                 </div>
               </div>

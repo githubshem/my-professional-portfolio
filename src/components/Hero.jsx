@@ -7,16 +7,16 @@ const Hero = () => {
           {/* Hero Text Content */}
           <div className="flex-1 animate-fade-in md:max-w-2xl">
             <h1 className="text-neon-pink font-mono text-base md:text-lg mb-5 neon-text">
-              Hi, my name is
+              Hi there, I am
             </h1>
             <h2 className="text-lightest-slate font-bold text-4xl md:text-6xl lg:text-7xl mb-3" style={{textShadow: '0 0 20px rgba(255, 0, 110, 0.5), 0 0 40px rgba(185, 28, 46, 0.3)'}}>
-              Shem Sumbeling
+              Shem
             </h2>
-            <h3 className="text-neon-purple font-bold text-3xl md:text-5xl lg:text-6xl mb-5" style={{textShadow: '0 0 20px rgba(185, 103, 255, 0.6)'}}>
-              I use Terraform and Python to automate.
+            <h3 className="text-neon-purple font-bold text-2xl md:text-4xl lg:text-5xl mb-5" style={{textShadow: '0 0 20px rgba(185, 103, 255, 0.6)'}}>
+              I work at the layer where electrical signals become computation—and where computation becomes the experiences people see online.
             </h3>
             <p className="text-slate max-w-2xl text-base md:text-lg leading-relaxed mb-12">
-              I am a DevOps Engineer specializing in cloud and platform development, utilizing an AI-native approach to meet developer requirements in less friction.
+              I am an engineer specializing in cloud and platform development, utilizing an AI-native approach to meet developer requirements in less friction.
               Currently, my focus is on minimizing deployment duration and errors to ensure an efficient and seamless process by enhancing the existing automated processes at {' '}
               <a href="#" className="text-neon-cyan hover:text-neon-pink transition-colors neon-text">
                 @Amadeus
