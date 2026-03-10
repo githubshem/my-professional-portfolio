@@ -15,13 +15,16 @@ const Hero = () => {
             <h3 className="text-neon-purple font-bold text-2xl md:text-4xl lg:text-5xl mb-5" style={{textShadow: '0 0 20px rgba(185, 103, 255, 0.6)'}}>
               I work at the layer where electrical signals become computation—and where computation becomes the experiences people see online.
             </h3>
-            <p className="text-slate max-w-2xl text-base md:text-lg leading-relaxed mb-12">
+            {/* <p className="text-slate max-w-2xl text-base md:text-lg leading-relaxed mb-12">
               I am an engineer specializing in cloud and platform development, utilizing an AI-native approach to meet developer requirements in less friction.
               Currently, my focus is on minimizing deployment duration and errors to ensure an efficient and seamless process by enhancing the existing automated processes at {' '}
               <a href="https://amadeus.com/" className="text-neon-cyan hover:text-neon-pink transition-colors neon-text">
                 @Amadeus
               </a>
               .
+            </p> */}
+            <p className="text-slate max-w-2xl text-base md:text-lg leading-relaxed mb-12">
+              I'm a passionate engineer building meaningful solutions to my fellow humans, with the goal of making life on Earth a more convenient way to live-in for us.
             </p>
             <a
               href="#projects"
