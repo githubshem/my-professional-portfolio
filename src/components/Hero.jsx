@@ -23,9 +23,9 @@ const Hero = () => {
               </a>
               .
             </p> */}
-            <p className="text-slate max-w-2xl text-base md:text-lg leading-relaxed mb-12">
+            {/* <p className="text-slate max-w-2xl text-base md:text-lg leading-relaxed mb-12">
               I'm a passionate engineer building meaningful solutions to my fellow humans, with the goal of making life on Earth a more convenient way to live-in for us.
-            </p>
+            </p> */}
             <a
               href="#projects"
               className="inline-block px-7 py-5 border-2 border-neon-pink text-neon-pink rounded font-mono text-sm hover:bg-neon-pink/10 hover:shadow-neon-pink transition-all"
