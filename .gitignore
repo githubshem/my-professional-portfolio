@@ -32,4 +32,4 @@ src/assets/profile-picture.png
 *.backup
 
 # Scripts (generated utilities)
-scripts/
+/scripts/
