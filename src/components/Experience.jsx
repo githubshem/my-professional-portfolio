@@ -10,7 +10,7 @@ const Experience = () => {
       duration: 'Aug 2024 - Nov 2025',
       url: 'https://amadeus.com/',
       responsibilities: [
-        'Executed production deployments for airport self-service platformsincluding CUSS, SSBD, and PRS, ensuring high availability and minimal disruption across international airport environments.',
+        'Executed production deployments for airport self-service platforms including CUSS, SSBD, and PRS, ensuring high availability and minimal disruption across international airport environments.',
         'Managed containerized microservice deployments for WLA modernization, supporting migration from legacy architecture to a more scalable platform.',
         'Implemented centralized logging and monitoring solutions using ELand Datadog to improve observability and incident response.',
         'Managed SSL/TLS certificate renewals across Ubuntu servers usingCertbot, maintaining secure communications with zero service disruption.',
