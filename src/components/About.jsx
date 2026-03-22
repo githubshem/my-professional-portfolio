@@ -4,7 +4,7 @@ import profilePic from '../assets/profile-picture.png';
 
 const About = () => {
   const skills = [
-    'AWS',
+    'Amazon Web Services',
     'Google Cloud Platform',
     'Microsoft Azure',
     'Kubernetes',
@@ -18,13 +18,14 @@ const About = () => {
     'SQL',
     'Networking',
     'Linux',
-    'Windows',
+    'Microsoft Windows',
     'Bash Script',
     'GitLab',
     'Jenkins',
     'CI/CD',
     'Golang',
     'Node.js',
+    'OpenTelemetry',
   ];
 
   return (
@@ -66,7 +67,7 @@ const About = () => {
           {/* About Text */}
           <div className="md:col-span-2 space-y-4 text-slate">
             <p>
-              Hello! I'm Shem Sumbeling, I'm a passionate engineer building meaningful solutions to my fellow humans, with the goal of making life on Earth a more convenient way to live-in for us.
+              Hello! I'm Shem Sumbeling, a passionate engineer building meaningful solutions for my fellow humans, with the goal of making life on Earth feel convenient and companionable.
             </p>
             <p>
               My interest in tech grew when I realized how fast it was evolving, and 
