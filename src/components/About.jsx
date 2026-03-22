@@ -74,7 +74,7 @@ const About = () => {
               pushed me to keep learning, experimenting, and turning ideas into real systems.
             </p>
             <p>
-              Fast-forward to today, I'm working across companies in different industries and technologies, 
+              Today, I'm working across companies in different industries and technologies, 
               continuing the goal I set years ago—learning nonstop as the industry keeps evolving.
             </p>
             <p>Here are a few technologies I've been working with recently:</p>
