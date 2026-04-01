@@ -12,11 +12,14 @@ const Experience = () => {
       responsibilities: [
         'Executed production deployments for airport self-service platforms including CUSS, SSBD, and PRS, ensuring high availability and minimal disruption across international airport environments.',
         'Managed containerized microservice deployments for WLA modernization, supporting migration from legacy architecture to a more scalable platform.',
-        'Implemented centralized logging and monitoring solutions using ELand Datadog to improve observability and incident response.',
-        'Managed SSL/TLS certificate renewals across Ubuntu servers usingCertbot, maintaining secure communications with zero service disruption.',
-        'Conducted AWS IAM access reviews and security audits to supportleast-privilege access and configuration compliance.',
+        'Configured and maintained NGINX reverse proxy and load balancing across multiple AWS regions, managing 30+ upstream clusters with round-robin distribution to ensure high availability for baggage processing, passenger reconciliation, and airport web applications.',
+        'Managed blue/green deployment routing through NGINX upstream configuration and map-based traffic steering, enabling zero-downtime releases across multiple Service Fabric production environments.',
+        'Troubleshot and managed configuration of biometric identity verification applications deployed on airport self-service kiosks, including service endpoint tuning, device connectivity settings, and IATA CUSS platform integration to support stable production operations.',
+        'Implemented centralized logging and monitoring solutions using ELK and Datadog to improve observability and incident response.',
+        'Managed SSL/TLS certificate renewals across Ubuntu servers using Certbot, maintaining secure communications with zero service disruption.',
+        'Conducted AWS IAM access reviews and security audits to support least-privilege access and configuration compliance.',
         'Troubleshot Kubernetes and Octopus Deploy pipeline issues by analyzing deployment logs, variables, and Helm chart configurations.',
-        'Contributed to modernization architecture planning, including monitoring and alerting requirements for proactive incident detection.',
+        'Contributed to modernization architecture planning, including monitoring and alerting requirements for proactive incident detection.'
       ],
     },
     {
