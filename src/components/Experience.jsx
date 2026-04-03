@@ -19,7 +19,9 @@ const Experience = () => {
         'Managed SSL/TLS certificate renewals across Ubuntu servers using Certbot, maintaining secure communications with zero service disruption.',
         'Conducted AWS IAM access reviews and security audits to support least-privilege access and configuration compliance.',
         'Troubleshot Kubernetes and Octopus Deploy pipeline issues by analyzing deployment logs, variables, and Helm chart configurations.',
-        'Contributed to modernization architecture planning, including monitoring and alerting requirements for proactive incident detection.'
+        'Contributed to modernization architecture planning, including monitoring and alerting requirements for proactive incident detection.',
+        'Used Postman to validate service endpoints and support deployment verification during release activities and production issue investigations.',
+        'Used Chrome DevTools in the Chromium-based CUSS platform to investigate performance issues, review console logs, and report findings to developers.',
       ],
     },
     {
@@ -35,6 +37,8 @@ const Experience = () => {
         'Investigated platform issues through log analysis in CloudWatch and Kibana, collaborating with DevOps and backend teams to resolve root causes.',
         'Supported hotfix validation and deployment monitoring across web, mobile, tablet, and iOS platforms.',
         'Worked closely with cross-functional teams including frontend, backend, QA, design, and project management to support successful delivery.',
+        'Supported QA and release validation by reproducing defects, verifying fixes, and documenting findings for collaboration with engineering teams.',
+        'Used Chrome DevTools to inspect frontend behavior, network activity, and client-side issues during hotfix validation and production support.',
       ],
     },
     {
