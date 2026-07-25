@@ -91,7 +91,7 @@ const Hero = () => {
                       <div className="absolute bottom-0 left-0 right-0 bg-midnight/70 backdrop-blur-sm border-t border-neon-pink/20 py-2.5 px-4">
                         <p className="flex items-center gap-2 font-mono text-xs text-light-slate">
                           <span className="text-neon-pink" style={{textShadow: '0 0 8px rgba(255, 0, 110, 0.6)'}}>&gt;</span>
-                          <span>shem<span className="text-neon-pink">@</span>portfolio:~$ status --online</span>
+                          <span>shem<span className="text-neon-pink">@</span>tech:~$ status --online</span>
                           <span className="cursor-blink inline-block w-2 h-3.5 bg-neon-pink/80"
                                 style={{boxShadow: '0 0 6px rgba(255, 0, 110, 0.5)'}}></span>
                         </p>
