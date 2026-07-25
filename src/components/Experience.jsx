@@ -59,7 +59,32 @@ const Experience = () => {
         'Used Chrome DevTools to inspect frontend behavior, network activity, and client-side issues during hotfix validation and production support.',
       ],
     },
+    {
+      company: 'F45 Training',
+      position: 'Backend Engineer',
+      duration: 'Nov 2023 - May 2024',
+      url: 'https://www.f45training.com.au/',
+      responsibilities: [
+        'Developed and maintained the backend infrastructure for the F45 Training website using Node.js, Express, and MongoDB.',
+        'Implemented RESTful APIs for user authentication, data management, and content delivery.',
+        'Optimized database queries and implemented caching strategies to improve performance and scalability.',
+        'Collaborated with frontend developers to integrate backend services and ensure seamless user experiences.',
+        'Implemented monitoring and logging solutions to track application performance and troubleshoot issues.',
+      ],
+    },
+    {
+      company: 'Forever 21',
+      position: 'Backend Engineer',
+      duration: 'Nov 2023 - May 2024',
+      url: 'https://www.forever21.com/',
+      responsibilities: [
+        'Developed and maintained internal backend tools and services using Golang to automate operational and business workflows.',
+        'Designed and implemented RESTful APIs for integrating internal systems, databases, and third-party services and integrate it with POS systems.',
+        'Built reusable Go modules, background workers, and automation scripts to improve efficiency and reduce manual processes.',
+      ],
+    },
   ];
+
 
   return (
     <section id="experience" className="py-24">
