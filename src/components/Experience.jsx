@@ -62,11 +62,11 @@ const Experience = () => {
     {
       company: 'F45 Training',
       position: 'Backend Engineer',
-      duration: 'Nov 2023 - May 2024',
+      duration: 'May 2021 - Jan 2023',
       url: 'https://www.f45training.com.au/',
       responsibilities: [
-        'Developed and maintained the backend infrastructure for the F45 Training website using Node.js, Express, and MongoDB.',
-        'Implemented RESTful APIs for user authentication, data management, and content delivery.',
+        'Developed and maintained the backend infrastructure for the F45 Training products and services using Node.js, Express, and MongoDB.',
+        'Implemented RESTful APIs for user authentication, and data management for the Lionheart Heart Rate Monitor.',
         'Optimized database queries and implemented caching strategies to improve performance and scalability.',
         'Collaborated with frontend developers to integrate backend services and ensure seamless user experiences.',
         'Implemented monitoring and logging solutions to track application performance and troubleshoot issues.',
@@ -75,7 +75,7 @@ const Experience = () => {
     {
       company: 'Forever 21',
       position: 'Backend Engineer',
-      duration: 'Nov 2023 - May 2024',
+      duration: 'Oct 2016 - May 2021',
       url: 'https://www.forever21.com/',
       responsibilities: [
         'Developed and maintained internal backend tools and services using Golang to automate operational and business workflows.',
