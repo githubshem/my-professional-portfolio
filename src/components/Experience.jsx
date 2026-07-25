@@ -5,6 +5,24 @@ const Experience = () => {
 
   const experiences = [
     {
+      company: 'Service First',
+      position: 'DevOps Engineer',
+      duration: 'May 2026 - Present',
+      url: 'https://www.servicefirstcx.com/',
+      responsibilities: [
+        'AWS Infrastructure Automation: Built and standardized Jenkins pipelines for Terraform-managed ECS, RDS, Redis, RabbitMQ, ALB, and VPC resources, reducing repetitive pipeline maintenance.',
+        'Infrastructure as Code Governance: Improved Terraform repository structure, provider configuration, naming standards, approval gates, and state safety across more than 80 workspaces.',
+        'Monitoring and Alerting: Designed and implemented Grafana and CloudWatch alerts for ECS, ALB, RDS, Redis, and RabbitMQ, improving visibility into infrastructure and application health.',
+        'Certificate Lifecycle Management: Developed an automated ACM certificate expiration alert system using Lambda, EventBridge, SES, IAM, and STS, helping prevent TLS outages across multiple AWS accounts and regions.',
+        'CI/CD Optimization: Consolidated legacy Jenkins jobs into reusable, parameter-driven pipelines with validation, plan artifacts, rollback controls, and manual approval before infrastructure changes.',
+        'Production Troubleshooting: Investigated ECS, EC2, Grafana, Redis, RDS, ALB, and application incidents using AWS CLI, CloudWatch Logs, Grafana, and service configuration mappings.',
+        'Developer Support: Worked closely with developers to trace infrastructure dependencies, validate database and Redis requests, restart ECS services safely, and resolve deployment or connectivity issues.',
+        'Operational Documentation: Created runbooks, testing procedures, implementation plans, rollback guides, and troubleshooting references that improved knowledge sharing and repeatability.',
+        'Risk and Change Management: Applied read-first investigation, least-privilege access, verification steps, approval gates, backups, and rollback planning before executing infrastructure changes.',
+        'Security: Implemented infrastructure controls supporting SOC 2 principles, including access management, monitoring, backup and recovery.',
+      ],
+    },
+    {
       company: 'Amadeus',
       position: 'Automation and Deployment Engineer (DevOps Engineer)',
       duration: 'Aug 2024 - Nov 2025',
@@ -26,7 +44,7 @@ const Experience = () => {
     },
     {
       company: 'Dynasty Gaming and Media',
-      position: 'Technical Operations Engineer',
+      position: 'Platform Engineer',
       duration: 'Jan 2023 - Nov 2023',
       url: 'https://www.dynastygm.com/',
       responsibilities: [
@@ -39,54 +57,6 @@ const Experience = () => {
         'Worked closely with cross-functional teams including frontend, backend, QA, design, and project management to support successful delivery.',
         'Supported QA and release validation by reproducing defects, verifying fixes, and documenting findings for collaboration with engineering teams.',
         'Used Chrome DevTools to inspect frontend behavior, network activity, and client-side issues during hotfix validation and production support.',
-      ],
-    },
-    {
-      company: 'F45 Training',
-      position: 'L2 Technical Support Engineer',
-      duration: 'May 2021 - Jan 2023',
-      url: 'https://f45training.com/',
-      responsibilities: [
-        'Supported cloud and operational tasks across AWS environments, including EC2 instance management through both the AWS Console and CLI.',
-        'Assisted in troubleshooting software and platform issues through triage, investigation, and collaboration with development teams.',
-        'Used Postman, MongoDB, and BigQuery to support testing, data validation, investigation, and issue resolution.',
-        'Identified recurring issues and communicated trends to engineering teams to support product and platform improvements.',
-        'Authored and maintained SOPs to improve operational consistency and knowledge sharing.',
-        'Delivered training and guidance to team members on process and system updates.',
-      ],
-    },
-    {
-      company: 'FIS Global',
-      position: 'IT Helpdesk',
-      duration: 'May 2020 - Feb 2021',
-      url: 'https://www.fisglobal.com/',
-      responsibilities: [
-        'Provided technical support for desktop systems, workstations, servers, and network-related issues in a 24/7 production environment.',
-        'Logged, tracked, prioritized, and escalated incidents based on business impact and resolution guidelines.',
-        'Communicated technical issues clearly to both technical and non-technical users.',
-        'Supported installations, repairs, upgrades, backups, and ongoing maintenance tasks.',
-      ],
-    },
-    {
-      company: 'TELUS International Philippines, Inc.',
-      position: 'Customer Support Representative',
-      duration: 'May 2020 - Feb 2021',
-      url: 'https://www.telus.com/',
-      responsibilities: [
-        'Resolved customer inquiries and complaints through phone, chat, and email support channels.',
-        'Maintained accurate records of customer interactions using ticketing tools.',
-        'Coordinated with internal teams to support timely issue resolution.',
-      ],
-    },
-    {
-      company: 'Forever 21',
-      position: 'IT Service Desk',
-      duration: 'May 2020 - Feb 2021',
-      url: 'https://www.forever21.com/',
-      responsibilities: [
-        'Provided Tier 1 and Tier 2 support for store systems, POS, desktops, peripherals, and software issues.',
-        'Logged, tracked, and escalated incidents using ticketing systems in line with service level expectations.',
-        'Collaborated with internal teams and vendors to support troubleshooting and hardware replacement.',
       ],
     },
   ];

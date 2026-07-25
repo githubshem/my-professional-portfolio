@@ -13,7 +13,7 @@ const Hero = () => {
               Shem
             </h2>
             <h3 className="text-neon-purple font-bold text-2xl md:text-4xl lg:text-5xl mb-5" style={{textShadow: '0 0 20px rgba(185, 103, 255, 0.6)'}}>
-              I work at the layer where electrical signals become computation—and where computation becomes the experiences people see online.
+              I work at the layer where electrical signals become computation and where computation becomes the experiences people see online.
             </h3>
             {/* <p className="text-slate max-w-2xl text-base md:text-lg leading-relaxed mb-12">
               I am an engineer specializing in cloud and platform development, utilizing an AI-native approach to meet developer requirements in less friction.

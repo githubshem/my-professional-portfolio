@@ -76,7 +76,7 @@ const About = () => {
             </p>
             <p>
               Today, I'm working across companies in different industries and technologies, 
-              continuing the goal I set years ago—learning nonstop as the industry keeps evolving.
+              continuing the goal I set years ago learning nonstop as the industry keeps evolving.
             </p>
             <p>Here are a few technologies I've been working with recently:</p>
           </div>
