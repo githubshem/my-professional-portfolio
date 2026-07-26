@@ -67,7 +67,7 @@ const About = () => {
           {/* About Text */}
           <div className="md:col-span-2 space-y-4 text-slate">
             <p>
-              Hello! I'm Shem Sumbeling, a passionate engineer building meaningful solutions for my fellow humans, with the goal of making life on Earth feel convenient and companionable.
+              I am a passionate engineer building meaningful solutions for my fellow humans, with the goal of making life on Earth feel convenient and companionable.
             </p>
             <p>
               My interest in tech grew when I realized how fast it was evolving, and 
