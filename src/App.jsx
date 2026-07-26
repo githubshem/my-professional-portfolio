@@ -11,23 +11,64 @@ import SocialLinks from './components/SocialLinks';
 import Email from './components/Email';
 import CustomCursor from './components/CustomCursor';
 
+const BOOT_LINES = [
+  'shem@tech:~$ ./portfolio --init',
+  'loading modules .......... ok',
+  'applying synthwave theme .. ok',
+  'render --start',
+];
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isFadingOut, setIsFadingOut] = useState(false);
+  const [visibleLines, setVisibleLines] = useState(() =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ? BOOT_LINES.length : 1
+  );
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1000);
+    if (visibleLines >= BOOT_LINES.length) return;
+    const timer = setTimeout(() => setVisibleLines((v) => v + 1), 300);
+    return () => clearTimeout(timer);
+  }, [visibleLines]);
+
+  useEffect(() => {
+    const minDisplay = new Promise((resolve) => setTimeout(resolve, 1400));
+    const fontsReady = document.fonts?.ready ?? Promise.resolve();
+    Promise.all([minDisplay, fontsReady]).then(() => {
+      setIsFadingOut(true);
+      setTimeout(() => setIsLoading(false), 500);
+    });
   }, []);
 
   if (isLoading) {
     return (
-      <div className="h-screen w-screen bg-navy flex items-center justify-center">
-        <div className="text-green text-4xl font-mono animate-pulse">Loading...</div>
+      <div
+        role="status"
+        aria-label="Loading"
+        className={`h-screen bg-midnight flex items-center justify-center px-6 transition-opacity duration-500 ${
+          isFadingOut ? 'opacity-0' : 'opacity-100'
+        }`}
+      >
+        <div className="font-mono text-sm md:text-base text-light-slate space-y-2">
+          {BOOT_LINES.slice(0, visibleLines).map((line, i) => (
+            <p key={i} className="flex items-center gap-2">
+              <span className="text-neon-pink neon-text">&gt;</span>
+              <span>{line}</span>
+              {i === visibleLines - 1 && (
+                <span
+                  className="cursor-blink inline-block w-2 h-4 bg-neon-pink/80"
+                  style={{ boxShadow: '0 0 6px rgba(255, 0, 110, 0.5)' }}
+                ></span>
+              )}
+            </p>
+          ))}
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-navy min-h-screen text-slate relative">
+    <div className="bg-midnight min-h-screen text-slate relative">
       {/* Global Synthwave Grid Background */}
       <div className="fixed inset-0 opacity-30 pointer-events-none z-0" style={{
         backgroundImage: `
@@ -39,15 +80,15 @@ function App() {
         backgroundSize: '100px 100px, 100px 100px, 20px 20px, 20px 20px',
         backgroundPosition: '-2px -2px, -2px -2px, -1px -1px, -1px -1px',
       }}></div>
-      
+
       {/* Radial gradient overlay for depth */}
       <div className="fixed inset-0 bg-gradient-radial from-transparent via-midnight/50 to-midnight pointer-events-none z-0"></div>
-      
+
       <CustomCursor />
       <Navbar />
       <SocialLinks />
       <Email />
-      
+
       <main className="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
         <Hero />
         <About />
@@ -56,7 +97,7 @@ function App() {
         <Certifications />
         <Contact />
       </main>
-      
+
       <Footer />
     </div>
   );

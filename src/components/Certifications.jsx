@@ -15,20 +15,18 @@ const Certifications = () => {
   ];
 
   return (
-    <section id="certifications" className="py-24">
-      <div className="max-w-6xl">
+    <section id="certifications" className="py-24 scroll-mt-24">
+      <div className="max-w-6xl mx-auto">
         <h2 className="section-heading">
           <span className="section-number">04.</span>
           Certifications
         </h2>
 
-        <div className="space-y-24">
+        <div className="space-y-12">
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className={`flex flex-col ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              } gap-8 items-center`}
+              className="flex flex-col md:flex-row gap-8 items-center"
             >
               {/* Certification Image */}
               <div className="w-full md:w-3/5 relative group">
@@ -54,7 +52,7 @@ const Certifications = () => {
                     {cert.name}
                   </a>
                 </h3>
-                <div className="bg-light-navy p-6 rounded-lg mb-4 shadow-lg">
+                <div className="bg-light-midnight border border-neon-purple/20 rounded-lg p-6 mb-4 shadow-glow-pink hover:border-neon-purple/50 hover:-translate-y-1 transition-all">
                   <div className="text-light-slate text-sm space-y-2 text-left">
                     <p><span className="text-neon-pink font-mono">Issuing Organization:</span> {cert.organization || '________'}</p>
                     <p><span className="text-neon-pink font-mono">Issue Date:</span> {cert.issueDate || '________'}</p>

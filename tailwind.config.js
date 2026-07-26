@@ -18,25 +18,35 @@ export default {
         'neon-cyan': '#05d9e8',
         'neon-magenta': '#ff1493',
         'electric-violet': '#8a2be2',
+        'lighter-midnight': '#2a2a3e',
+        'neon-pink-bright': '#ff5c8f',
         'slate': '#c4b5fd',
         'light-slate': '#ddd6fe',
         'lightest-slate': '#ede9fe',
-        
-        // Keep original names for compatibility
-        'navy': '#0a0a0f',
-        'light-navy': '#1a1a2e',
-        'lightest-navy': '#2a2a3e',
-        'green': '#ff006e',
-        'white': '#ede9fe',
       },
       fontFamily: {
-        sans: ['Inter', 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'monospace'],
-        mono: ['SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'monospace'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'monospace'],
       },
       boxShadow: {
         'neon-pink': '0 0 5px theme("colors.neon-pink"), 0 0 20px theme("colors.neon-pink")',
         'neon-purple': '0 0 5px theme("colors.neon-purple"), 0 0 20px theme("colors.neon-purple")',
         'neon-cyan': '0 0 5px theme("colors.neon-cyan"), 0 0 20px theme("colors.neon-cyan")',
+        'glow-pink': '0 10px 30px -10px rgba(255, 0, 110, 0.3)',
+        'glow-pink-sm': '0 0 10px rgba(255, 0, 110, 0.3)',
+        'glow-drawer': '-10px 0 30px rgba(255, 0, 110, 0.2)',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
+      },
+      keyframes: {
+        'fade-in': {
+          from: { opacity: '0', transform: 'translateY(12px)' },
+          to: { opacity: '1', transform: 'none' },
+        },
+      },
+      animation: {
+        'fade-in': 'fade-in 0.6s ease-out both',
       },
     },
   },

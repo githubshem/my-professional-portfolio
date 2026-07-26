@@ -1,13 +1,9 @@
-import { FiGithub, FiLinkedin, FiTwitter, FiCodepen } from 'react-icons/fi';
-import { SiSubstack } from 'react-icons/si';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 const SocialLinks = () => {
   const socialLinks = [
     { icon: FiGithub, url: 'https://github.com/githubshem', label: 'GitHub' },
     { icon: FiLinkedin, url: 'https://www.linkedin.com/in/ssum/', label: 'LinkedIn' },
-    // { icon: SiSubstack, url: 'https://yourusername.substack.com', label: 'Substack' },
-    // { icon: FiTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
-    // { icon: FiCodepen, url: 'https://codepen.io/yourusername', label: 'CodePen' },
   ];
 
   return (
@@ -19,7 +15,7 @@ const SocialLinks = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light-slate hover:text-green hover:-translate-y-1 transition-all block"
+              className="text-light-slate hover:text-neon-pink hover:-translate-y-1 transition-all block"
               aria-label={social.label}
             >
               <social.icon className="text-xl" />

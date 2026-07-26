@@ -5,7 +5,7 @@ const Hero = () => {
       <section id="home" className="min-h-screen flex items-center pt-24 pb-12 relative">
         <div className="w-full relative z-10 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
           {/* Hero Text Content */}
-          <div className="flex-1 animate-fade-in md:max-w-2xl">
+          <div className="flex-1 motion-safe:animate-fade-in md:max-w-2xl">
             <h1 className="text-neon-pink font-mono text-base md:text-lg mb-5 neon-text">
               Hi there, I am
             </h1>
@@ -15,17 +15,6 @@ const Hero = () => {
             <h3 className="text-light-slate font-semibold text-xl md:text-2xl lg:text-3xl leading-snug mb-10 max-w-xl">
               I work at the layer where electrical signals become computation and where computation becomes the experiences people see online.
             </h3>
-            {/* <p className="text-slate max-w-2xl text-base md:text-lg leading-relaxed mb-12">
-              I am an engineer specializing in cloud and platform development, utilizing an AI-native approach to meet developer requirements in less friction.
-              Currently, my focus is on minimizing deployment duration and errors to ensure an efficient and seamless process by enhancing the existing automated processes at {' '}
-              <a href="https://amadeus.com/" className="text-neon-cyan hover:text-neon-pink transition-colors neon-text">
-                @Amadeus
-              </a>
-              .
-            </p> */}
-            {/* <p className="text-slate max-w-2xl text-base md:text-lg leading-relaxed mb-12">
-              I'm a passionate engineer building meaningful solutions to my fellow humans, with the goal of making life on Earth a more convenient way to live-in for us.
-            </p> */}
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href="#projects"
@@ -44,9 +33,9 @@ const Hero = () => {
           </div>
 
           {/* Retro Synthwave Profile Picture */}
-          <div className="flex-shrink-0 animate-fade-in">
+          <div className="flex-shrink-0 motion-safe:animate-fade-in">
             <div className="relative group">
-              <div className="relative w-80 h-96 md:w-96 md:h-[450px]">
+              <div className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[450px]">
                 {/* Ambient Glow */}
                 <div className="absolute -inset-6 bg-gradient-to-br from-neon-pink/25 via-neon-purple/15 to-neon-cyan/25 blur-2xl motion-safe:animate-pulse" style={{animationDuration: '4s'}}></div>
 

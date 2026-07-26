@@ -1,10 +1,9 @@
-import { FiGithub, FiLinkedin, FiTwitter, FiMail } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const Footer = () => {
   const socialLinks = [
     { icon: FiGithub, url: 'https://github.com/githubshem', label: 'GitHub' },
     { icon: FiLinkedin, url: 'https://www.linkedin.com/in/ssum/', label: 'LinkedIn' },
-    // { icon: FiTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
     { icon: FiMail, url: 'mailto:shemsumbelingforwork@gmail.com', label: 'Email' },
   ];
 
@@ -17,7 +16,7 @@ const Footer = () => {
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-light-slate hover:text-green transition-colors"
+            className="text-light-slate hover:text-neon-pink transition-colors"
             aria-label={social.label}
           >
             <social.icon className="text-xl" />
@@ -28,7 +27,7 @@ const Footer = () => {
         href="https://github.com/githubshem"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-slate hover:text-green font-mono text-sm transition-colors"
+        className="text-slate hover:text-neon-pink font-mono text-sm transition-colors"
       >
         <p>Built by Shem Sumbeling</p>
         <p className="mt-2">Inspired by Brittany Chiang</p>

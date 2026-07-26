@@ -29,8 +29,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24">
-      <div className="max-w-6xl">
+    <section id="about" className="py-24 scroll-mt-24">
+      <div className="max-w-6xl mx-auto">
         <h2 className="section-heading">
           <span className="section-number">01.</span>
           About Me
@@ -41,7 +41,7 @@ const About = () => {
           <div className="md:col-span-1 flex justify-center items-start">
             <div className="relative group">
               {/* Animated Border Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-cyan rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-cyan rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 motion-safe:animate-pulse"></div>
               
               {/* Profile Image Container */}
               <div className="relative">
