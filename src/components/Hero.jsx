@@ -4,16 +4,29 @@ import casualAttire from '../assets/casual-attire.png';
 const Hero = () => {
     const tiltRef = useRef(null);
 
-    // Rotate the photo frame toward the cursor. Tilt only — no surface highlight.
-    const handleTilt = (e) => {
+    // Rotate the photo frame toward a pointer position. Tilt only — no highlight.
+    const applyTilt = (clientX, clientY) => {
       const el = tiltRef.current;
-      if (!el || !window.matchMedia('(hover: hover)').matches) return;
+      if (!el) return;
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
       const rect = el.getBoundingClientRect();
-      const rotateX = ((e.clientY - rect.top) / rect.height - 0.5) * -8;
-      const rotateY = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
+      const rotateX = ((clientY - rect.top) / rect.height - 0.5) * -8;
+      const rotateY = ((clientX - rect.left) / rect.width - 0.5) * 8;
       el.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    };
+
+    // Guarded so the synthetic mousemove a tap emits can't re-tilt after reset
+    const handleMouseTilt = (e) => {
+      if (!window.matchMedia('(hover: hover)').matches) return;
+      applyTilt(e.clientX, e.clientY);
+    };
+
+    // Passive: never calls preventDefault, so a swipe still scrolls the page
+    // normally — the photo just tilts along the way.
+    const handleTouchTilt = (e) => {
+      const touch = e.touches[0];
+      if (touch) applyTilt(touch.clientX, touch.clientY);
     };
 
     const resetTilt = () => {
@@ -60,8 +73,12 @@ const Hero = () => {
 
                 <div
                   ref={tiltRef}
-                  onMouseMove={handleTilt}
+                  onMouseMove={handleMouseTilt}
                   onMouseLeave={resetTilt}
+                  onTouchStart={handleTouchTilt}
+                  onTouchMove={handleTouchTilt}
+                  onTouchEnd={resetTilt}
+                  onTouchCancel={resetTilt}
                   className="tilt-card relative w-full h-full"
                 >
                   {/* Gradient Border Frame */}

@@ -1,5 +1,5 @@
+import { useEffect, useRef } from 'react';
 import { FiGithub } from 'react-icons/fi';
-// import { useEffect, useRef } from 'react'; // needed by touch Option B or C
 
 const Projects = () => {
   const projects = [
@@ -28,14 +28,17 @@ const Projects = () => {
 
   /* ==========================================================================
      TOUCH ACTIVATION — JS halves of the options described in index.css.
-     Option A (press) is pure CSS and needs nothing here, so both blocks below
-     are commented out. Uncomment ONE, plus its matching CSS block, plus the
-     useEffect/useRef import above, and attach `ref={listRef}` to the wrapper.
+
+     Option A — press      : pure CSS, needs nothing here
+     Option B — tap toggle : commented out below
+     Option C — scroll     : ACTIVE
+
+     To switch, swap which block is commented here AND in index.css.
      ========================================================================== */
 
-  /* ---- Option B — tap to toggle -------------------------------------------
   const listRef = useRef(null);
 
+  /* ---- Option B — tap to toggle -------------------------------------------
   useEffect(() => {
     if (!window.matchMedia('(hover: none)').matches) return;
     const list = listRef.current;
@@ -55,9 +58,7 @@ const Projects = () => {
   }, []);
   ---- end Option B ---- */
 
-  /* ---- Option C — activate on scroll into view -----------------------------
-  const listRef = useRef(null);
-
+  /* ---- Option C — activate on scroll into view ---- */
   useEffect(() => {
     if (!window.matchMedia('(hover: none)').matches) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -78,7 +79,6 @@ const Projects = () => {
     list.querySelectorAll('.card-pulse').forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-  ---- end Option C ---- */
 
   return (
     <section id="projects" className="py-24 scroll-mt-24">
@@ -88,8 +88,8 @@ const Projects = () => {
           Some Things I've Built
         </h2>
 
-        {/* Options B and C need: <div ref={listRef} className="space-y-12"> */}
-        <div className="space-y-12">
+        {/* listRef is used by touch Options B and C — see the note above */}
+        <div ref={listRef} className="space-y-12">
           {projects.map((project, index) => (
             <div
               key={index}
