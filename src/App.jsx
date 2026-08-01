@@ -31,6 +31,15 @@ function App() {
     return () => clearTimeout(timer);
   }, [visibleLines]);
 
+  // iOS Safari ignores :active unless some ancestor has a touch listener.
+  // This empty one is the standard unlock — without it the press-to-pulse
+  // treatment on touch devices silently never fires.
+  useEffect(() => {
+    const noop = () => {};
+    document.body.addEventListener('touchstart', noop, { passive: true });
+    return () => document.body.removeEventListener('touchstart', noop);
+  }, []);
+
   useEffect(() => {
     const minDisplay = new Promise((resolve) => setTimeout(resolve, 1400));
     const fontsReady = document.fonts?.ready ?? Promise.resolve();

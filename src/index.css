@@ -222,6 +222,71 @@ body {
   }
 }
 
+/* ==========================================================================
+   TOUCH BEHAVIOUR FOR THE PULSE BLOOM
+   Touch browsers latch :hover after a tap and never release it, so the
+   pulse would run forever. Below: the latch is neutralised, then one of
+   three activation models takes its place.
+
+   Option A — press      : ACTIVE
+   Option B — tap toggle : commented out (also needs its JS in Projects.jsx)
+   Option C — scroll     : commented out (also needs its JS in Projects.jsx)
+
+   To switch: comment out the active block, uncomment the one you want,
+   and uncomment its matching block in Projects.jsx.
+   ========================================================================== */
+@media (hover: none) {
+  /* Neutralise the latched hover state left behind by a tap.
+     The class is doubled deliberately: Tailwind's hover:-translate-y-2 and
+     hover:border-* have the same specificity as a single class + :hover, and
+     they are emitted AFTER this file, so a single .card-pulse:hover would
+     lose the tie. Doubling wins it without reaching for !important. */
+  .card-pulse.card-pulse:hover {
+    animation: none;
+    transform: none;
+    border-color: rgba(255, 0, 110, 0.2);
+  }
+
+  .card-torch.card-torch:hover {
+    transform: none;
+    border-color: rgba(185, 103, 255, 0.2);
+  }
+
+  /* ---- Option A — press: runs only while the finger is down ---- */
+  .card-pulse.card-pulse:active {
+    animation: bloom-pulse-shift 2.4s ease-in-out infinite;
+    transform: translateY(-8px);
+    border-color: rgba(5, 217, 232, 0.5);
+  }
+
+  /* ---- Option B — tap to toggle: persists until you tap elsewhere ----
+  .card-pulse.card-pulse.is-tapped {
+    animation: bloom-pulse-shift 2.4s ease-in-out infinite;
+    transform: translateY(-8px);
+    border-color: rgba(5, 217, 232, 0.5);
+  }
+  ---- end Option B ---- */
+
+  /* ---- Option C — scroll: lights while the card sits mid-screen ----
+  .card-pulse.card-pulse.is-in-view {
+    animation: bloom-pulse-shift 2.4s ease-in-out infinite;
+    transform: translateY(-8px);
+    border-color: rgba(5, 217, 232, 0.5);
+  }
+  ---- end Option C ---- */
+
+  @media (prefers-reduced-motion: reduce) {
+    .card-pulse.card-pulse:active {
+      transform: none;
+      animation: none;
+      box-shadow:
+        0 0 0 1px rgba(5, 217, 232, 0.5),
+        0 0 34px rgba(5, 217, 232, 0.4),
+        0 22px 60px -8px rgba(185, 103, 255, 0.6);
+    }
+  }
+}
+
 /* Torch — a tight beam that uncovers a blueprint grid where it falls.
    Shares --spot-x / --spot-y with .card-spotlight below. */
 .card-torch {
