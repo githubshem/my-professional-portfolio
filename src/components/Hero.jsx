@@ -47,17 +47,19 @@ const Hero = () => {
             <h3 className="text-light-slate font-semibold text-xl md:text-2xl lg:text-3xl leading-snug mb-10 max-w-xl">
               I work at the layer where electrical signals become computation and where computation becomes the experiences people see online.
             </h3>
-            <div className="flex flex-wrap items-center gap-4">
+            {/* Stacked and full-width on phones so the two CTAs share an edge
+                and give a full-width tap target; unchanged from sm upwards. */}
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4">
               <a
                 href="#projects"
-                className="btn-sheen no-touch-callout inline-block px-8 py-4 border-2 border-neon-pink text-neon-pink rounded font-mono text-sm hover:bg-neon-pink/10 hover:shadow-neon-pink transition-all"
+                className="btn-sheen no-touch-callout block w-full sm:w-auto text-center px-8 py-4 border-2 border-neon-pink text-neon-pink rounded font-mono text-sm hover:bg-neon-pink/10 hover:shadow-neon-pink transition-all"
                 style={{textShadow: '0 0 10px rgba(255, 0, 110, 0.8)'}}
               >
                 Check out my work!
               </a>
               <a
                 href="#contact"
-                className="no-touch-callout inline-block px-8 py-4 border border-neon-cyan/50 text-neon-cyan rounded font-mono text-sm hover:border-neon-cyan hover:bg-neon-cyan/10 hover:shadow-neon-cyan transition-all"
+                className="no-touch-callout block w-full sm:w-auto text-center px-8 py-4 border border-neon-cyan/50 text-neon-cyan rounded font-mono text-sm hover:border-neon-cyan hover:bg-neon-cyan/10 hover:shadow-neon-cyan transition-all"
               >
                 Get in touch
               </a>
