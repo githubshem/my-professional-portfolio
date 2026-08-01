@@ -55,11 +55,12 @@ const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-neon-pink/20 via-transparent to-neon-purple/20 mix-blend-overlay"></div>
                 </div>
                 
-                {/* Corner Accents */}
+                {/* Corner Accents — disabled 2026-08-01, uncomment to restore
                 <div className="absolute -top-2 -left-2 w-8 h-8 border-t-4 border-l-4 border-neon-cyan"></div>
                 <div className="absolute -top-2 -right-2 w-8 h-8 border-t-4 border-r-4 border-neon-pink"></div>
                 <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-4 border-l-4 border-neon-purple"></div>
                 <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-4 border-r-4 border-neon-magenta"></div>
+                */}
               </div>
             </div>
           </div>

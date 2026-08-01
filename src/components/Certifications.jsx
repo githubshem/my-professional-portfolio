@@ -1,5 +1,6 @@
 import { FiExternalLink } from 'react-icons/fi';
 import saaBadge from '../assets/SAA.png';
+import { handleSpotlight } from '../utils/spotlight';
 
 const Certifications = () => {
   const certifications = [
@@ -52,7 +53,11 @@ const Certifications = () => {
                     {cert.name}
                   </a>
                 </h3>
-                <div className="bg-light-midnight border border-neon-purple/20 rounded-lg p-6 mb-4 shadow-glow-pink hover:border-neon-purple/50 hover:-translate-y-1 transition-all">
+                <div
+                  onMouseMove={handleSpotlight}
+                  data-cursor-quiet
+                  className="card-torch bg-light-midnight border border-neon-purple/20 rounded-lg p-6 mb-4 shadow-glow-pink hover:border-neon-purple/50 hover:-translate-y-1 transition-all duration-300 ease-out"
+                >
                   <div className="text-light-slate text-sm space-y-2 text-left">
                     <p><span className="text-neon-pink font-mono">Issuing Organization:</span> {cert.organization || '________'}</p>
                     <p><span className="text-neon-pink font-mono">Issue Date:</span> {cert.issueDate || '________'}</p>

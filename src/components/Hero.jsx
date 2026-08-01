@@ -1,6 +1,25 @@
+import { useRef } from 'react';
 import casualAttire from '../assets/casual-attire.png';
 
 const Hero = () => {
+    const tiltRef = useRef(null);
+
+    // Rotate the photo frame toward the cursor. Tilt only — no surface highlight.
+    const handleTilt = (e) => {
+      const el = tiltRef.current;
+      if (!el || !window.matchMedia('(hover: hover)').matches) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const rect = el.getBoundingClientRect();
+      const rotateX = ((e.clientY - rect.top) / rect.height - 0.5) * -8;
+      const rotateY = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
+      el.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    };
+
+    const resetTilt = () => {
+      if (tiltRef.current) tiltRef.current.style.transform = '';
+    };
+
     return (
       <section id="home" className="min-h-screen flex items-center pt-24 pb-12 relative">
         <div className="w-full relative z-10 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
@@ -39,7 +58,12 @@ const Hero = () => {
                 {/* Ambient Glow */}
                 <div className="absolute -inset-6 bg-gradient-to-br from-neon-pink/25 via-neon-purple/15 to-neon-cyan/25 blur-2xl motion-safe:animate-pulse" style={{animationDuration: '4s'}}></div>
 
-                <div className="tilt-card relative w-full h-full">
+                <div
+                  ref={tiltRef}
+                  onMouseMove={handleTilt}
+                  onMouseLeave={resetTilt}
+                  className="tilt-card relative w-full h-full"
+                >
                   {/* Gradient Border Frame */}
                   <div className="relative w-full h-full p-[2px] rounded-lg bg-gradient-to-br from-neon-pink via-neon-purple to-neon-cyan"
                        style={{boxShadow: '0 0 25px rgba(255, 0, 110, 0.35)'}}>

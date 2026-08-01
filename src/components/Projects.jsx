@@ -37,7 +37,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-light-midnight border border-neon-pink/20 rounded-lg p-8 shadow-glow-pink hover:border-neon-pink/50 hover:-translate-y-1 transition-all"
+              className="card-pulse bg-light-midnight border border-neon-pink/20 rounded-lg p-8 shadow-glow-pink transition-all duration-300 ease-out hover:border-neon-cyan/50 hover:-translate-y-2"
             >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <h3 className="text-lightest-slate text-2xl font-bold">

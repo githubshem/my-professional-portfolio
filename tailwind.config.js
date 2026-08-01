@@ -33,6 +33,7 @@ export default {
         'neon-purple': '0 0 5px theme("colors.neon-purple"), 0 0 20px theme("colors.neon-purple")',
         'neon-cyan': '0 0 5px theme("colors.neon-cyan"), 0 0 20px theme("colors.neon-cyan")',
         'glow-pink': '0 10px 30px -10px rgba(255, 0, 110, 0.3)',
+        'glow-bloom': '0 0 0 1px rgba(255, 0, 110, 0.35), 0 0 24px rgba(255, 0, 110, 0.28), 0 18px 45px -6px rgba(255, 0, 110, 0.45), 0 0 90px -10px rgba(185, 103, 255, 0.35)',
         'glow-pink-sm': '0 0 10px rgba(255, 0, 110, 0.3)',
         'glow-drawer': '-10px 0 30px rgba(255, 0, 110, 0.2)',
       },

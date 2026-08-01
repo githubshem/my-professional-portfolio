@@ -93,14 +93,11 @@ body {
   }
 }
 
-/* Hero photo frame */
+/* Hero photo frame — parallax tilt, transform driven by Hero.jsx.
+   The short transition damps the per-frame updates into a smooth follow. */
 .tilt-card {
-  transition: transform 0.5s ease;
+  transition: transform 0.25s ease-out;
   will-change: transform;
-}
-
-.group:hover .tilt-card {
-  transform: perspective(900px) rotateY(-4deg) rotateX(2deg) scale(1.02);
 }
 
 @keyframes cursor-blink {
@@ -123,8 +120,223 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .group:hover .tilt-card {
+  .tilt-card {
+    transform: none !important;
+  }
+
+  /* Keep the glow, drop the lift */
+  .card-bloom:hover {
     transform: none;
+  }
+}
+
+/* Gradient border sweep — a neon arc that travels the card edge on hover */
+@property --sweep-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes border-sweep {
+  to {
+    --sweep-angle: 360deg;
+  }
+}
+
+.card-sweep {
+  position: relative;
+}
+
+.card-sweep::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: calc(theme('borderRadius.lg') + 1px);
+  padding: 1px;
+  background: conic-gradient(
+    from var(--sweep-angle),
+    transparent 0deg,
+    theme('colors.neon-pink') 40deg,
+    theme('colors.neon-purple') 90deg,
+    theme('colors.neon-cyan') 130deg,
+    transparent 180deg,
+    transparent 360deg
+  );
+  /* Punch out the middle so only the 1px ring paints */
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.card-sweep:hover::before {
+  opacity: 1;
+  animation: border-sweep 3s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-sweep:hover {
+    transform: none;
+  }
+
+  /* Show the gradient ring, but hold it still */
+  .card-sweep:hover::before {
+    animation: none;
+  }
+}
+
+/* Pulse bloom, crossfade colourway — the glow breathes on a 2.4s beat while
+   the hue travels pink → cyan, with purple in the wide ambient layer. */
+@keyframes bloom-pulse-shift {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(255, 0, 110, 0.4),
+      0 0 20px rgba(255, 0, 110, 0.25),
+      0 18px 45px -8px rgba(255, 0, 110, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(5, 217, 232, 0.5),
+      0 0 34px rgba(5, 217, 232, 0.4),
+      0 22px 60px -8px rgba(185, 103, 255, 0.6);
+  }
+}
+
+.card-pulse:hover {
+  animation: bloom-pulse-shift 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-pulse:hover {
+    transform: none;
+    animation: none;
+    /* Hold the peak of the beat so hover still reads as a state change */
+    box-shadow:
+      0 0 0 1px rgba(5, 217, 232, 0.5),
+      0 0 34px rgba(5, 217, 232, 0.4),
+      0 22px 60px -8px rgba(185, 103, 255, 0.6);
+  }
+}
+
+/* Torch — a tight beam that uncovers a blueprint grid where it falls.
+   Shares --spot-x / --spot-y with .card-spotlight below. */
+.card-torch {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.card-torch::before,
+.card-torch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+/* The grid exists everywhere; the mask only lets it show inside the beam */
+.card-torch::before {
+  background-image:
+    linear-gradient(rgba(5, 217, 232, 0.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5, 217, 232, 0.55) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask: radial-gradient(
+    140px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    #000 0%,
+    transparent 70%
+  );
+  mask: radial-gradient(
+    140px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    #000 0%,
+    transparent 70%
+  );
+}
+
+/* Warm core of the beam */
+.card-torch::after {
+  background: radial-gradient(
+    126px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(255, 0, 110, 0.3),
+    transparent 70%
+  );
+}
+
+.card-torch:hover::before,
+.card-torch:hover::after {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .card-torch::before,
+  .card-torch::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-torch:hover {
+    transform: none;
+  }
+
+  .card-torch::before,
+  .card-torch::after {
+    --spot-x: 50%;
+    --spot-y: 50%;
+  }
+}
+
+/* Cursor-tracked spotlight — --spot-x / --spot-y are set by Projects.jsx */
+.card-spotlight {
+  position: relative;
+  overflow: hidden;
+  /* Unconditional stacking context so the z-index below stays predictable */
+  isolation: isolate;
+}
+
+.card-spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Above the card's background, below its text */
+  z-index: -1;
+  background: radial-gradient(
+    280px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(255, 0, 110, 0.22),
+    rgba(185, 103, 255, 0.1) 45%,
+    transparent 72%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card-spotlight:hover::before {
+  opacity: 1;
+}
+
+/* No cursor to track on touch */
+@media (hover: none) {
+  .card-spotlight::before {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-spotlight:hover {
+    transform: none;
+  }
+
+  /* Centre it and stop it chasing the pointer */
+  .card-spotlight::before {
+    --spot-x: 50%;
+    --spot-y: 50%;
   }
 }
 
