@@ -50,14 +50,14 @@ const Hero = () => {
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href="#projects"
-                className="btn-sheen inline-block px-8 py-4 border-2 border-neon-pink text-neon-pink rounded font-mono text-sm hover:bg-neon-pink/10 hover:shadow-neon-pink transition-all"
+                className="btn-sheen no-touch-callout inline-block px-8 py-4 border-2 border-neon-pink text-neon-pink rounded font-mono text-sm hover:bg-neon-pink/10 hover:shadow-neon-pink transition-all"
                 style={{textShadow: '0 0 10px rgba(255, 0, 110, 0.8)'}}
               >
                 Check out my work!
               </a>
               <a
                 href="#contact"
-                className="inline-block px-8 py-4 border border-neon-cyan/50 text-neon-cyan rounded font-mono text-sm hover:border-neon-cyan hover:bg-neon-cyan/10 hover:shadow-neon-cyan transition-all"
+                className="no-touch-callout inline-block px-8 py-4 border border-neon-cyan/50 text-neon-cyan rounded font-mono text-sm hover:border-neon-cyan hover:bg-neon-cyan/10 hover:shadow-neon-cyan transition-all"
               >
                 Get in touch
               </a>
@@ -79,7 +79,7 @@ const Hero = () => {
                   onTouchMove={handleTouchTilt}
                   onTouchEnd={resetTilt}
                   onTouchCancel={resetTilt}
-                  className="tilt-card relative w-full h-full"
+                  className="tilt-card no-touch-callout relative w-full h-full"
                 >
                   {/* Gradient Border Frame */}
                   <div className="relative w-full h-full p-[2px] rounded-lg bg-gradient-to-br from-neon-pink via-neon-purple to-neon-cyan"

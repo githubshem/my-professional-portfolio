@@ -39,7 +39,7 @@ const About = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Profile Picture with Synthwave Effects */}
           <div className="md:col-span-1 flex justify-center items-start">
-            <div className="relative group">
+            <div className="no-touch-callout relative group">
               {/* Animated Border Effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-cyan rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 motion-safe:animate-pulse"></div>
               

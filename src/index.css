@@ -98,11 +98,16 @@ body {
 .tilt-card {
   transition: transform 0.25s ease-out;
   will-change: transform;
-  /* Holding a finger on the frame to tilt it otherwise reads as a long press:
-     iOS starts selecting the terminal caption and offers Save/Copy on the
-     photo. Nothing in here is text worth selecting, so suppress both.
-     Deliberately scoped to this frame — the project and certification cards
-     keep normal selection so visitors can copy the credential ID. */
+}
+
+/* On iOS a long press starts a selection, and on a link it also opens the
+   preview sheet ("Open in New Tab", "Download Linked File", …). Neither is
+   wanted on decorative imagery or on a button you meant to tap.
+
+   Apply only where there is nothing worth selecting. Body copy, the project
+   cards and the certification card deliberately keep normal selection so
+   visitors can still copy things like the credential ID. */
+.no-touch-callout {
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;

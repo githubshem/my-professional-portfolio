@@ -14,7 +14,7 @@ const Contact = () => {
           </p>
           <a
             href="mailto:shemsumbelingforwork@gmail.com"
-            className="btn-sheen inline-block px-8 py-4 border border-neon-pink text-neon-pink rounded font-mono text-sm hover:bg-neon-pink/10 hover:shadow-neon-pink transition-all"
+            className="btn-sheen no-touch-callout inline-block px-8 py-4 border border-neon-pink text-neon-pink rounded font-mono text-sm hover:bg-neon-pink/10 hover:shadow-neon-pink transition-all"
             style={{ textShadow: '0 0 10px rgba(255, 0, 110, 0.8)' }}
           >
             Send me an email!
