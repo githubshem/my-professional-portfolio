@@ -29,7 +29,7 @@ const Footer = () => {
         rel="noopener noreferrer"
         className="text-slate hover:text-neon-pink font-mono text-sm transition-colors"
       >
-        <p>Built by Shem Sumbeling</p>
+        <p>Built by Shem</p>
         <p className="mt-2">Inspired by Brittany Chiang</p>
       </a>
     </footer>
