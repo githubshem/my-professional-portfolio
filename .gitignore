@@ -33,3 +33,6 @@ src/assets/profile-picture.png
 
 # Scripts (generated utilities)
 /scripts/
+
+# Local tooling config (not part of the app)
+.claude/
