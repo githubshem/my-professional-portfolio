@@ -354,9 +354,26 @@ body {
 }
 
 @media (hover: none) {
-  .card-torch::before,
-  .card-torch::after {
-    display: none;
+  /* Two drivers on touch: the card's travel through the viewport sweeps the
+     beam as you scroll, and a finger on the card takes over while it's down.
+     Hover latches after a tap here, so it must not control visibility. */
+  .card-torch:hover::before,
+  .card-torch:hover::after {
+    opacity: 0;
+  }
+
+  .card-torch.is-lit::before,
+  .card-torch.is-lit::after {
+    opacity: 1;
+  }
+
+  /* Dragging a finger across this card would otherwise start selecting the
+     credential ID. Scoped to touch, so desktop visitors can still copy it. */
+  .card-torch {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 

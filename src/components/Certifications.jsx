@@ -1,8 +1,10 @@
+import { useEffect, useRef } from 'react';
 import { FiExternalLink } from 'react-icons/fi';
 import saaBadge from '../assets/SAA.png';
-import { handleSpotlight } from '../utils/spotlight';
+import { handleSpotlight, handleTouchSpotlight } from '../utils/spotlight';
 
 const Certifications = () => {
+  const sectionRef = useRef(null);
   const certifications = [
     {
       name: 'AWS Certified Solutions Architect – Associate',
@@ -15,8 +17,61 @@ const Certifications = () => {
     },
   ];
 
+  /* Touch has no cursor, so on those devices the beam is driven by how far the
+     card has travelled through the viewport: it sweeps down the card as you
+     scroll past, weaving side to side. Chosen over touch-dragging because
+     holding a finger on this card selects the credential ID instead — and
+     keeping that text copyable matters more than tracking the finger. */
+  useEffect(() => {
+    if (!window.matchMedia('(hover: none)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const cards = sectionRef.current?.querySelectorAll('.card-torch');
+    if (!cards?.length) return;
+
+    let frame = null;
+
+    const update = () => {
+      frame = null;
+      cards.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        // 0 as the card enters from the bottom, 1 as it leaves past the top
+        const raw = 1 - (rect.top + rect.height) / (window.innerHeight + rect.height);
+        const p = Math.min(Math.max(raw, 0), 1);
+        el.style.setProperty('--spot-y', `${p * rect.height}px`);
+        el.style.setProperty(
+          '--spot-x',
+          `${rect.width * (0.5 + 0.32 * Math.sin(p * Math.PI * 2))}px`
+        );
+      });
+    };
+
+    const onScroll = () => {
+      if (frame === null) frame = requestAnimationFrame(update);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => e.target.classList.toggle('is-lit', e.isIntersecting));
+      },
+      { threshold: 0.35 }
+    );
+    cards.forEach((el) => observer.observe(el));
+
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (frame !== null) cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
-    <section id="certifications" className="py-24 scroll-mt-24">
+    <section ref={sectionRef} id="certifications" className="py-24 scroll-mt-24">
       <div className="max-w-6xl mx-auto">
         <h2 className="section-heading">
           <span className="section-number">04.</span>
@@ -55,6 +110,8 @@ const Certifications = () => {
                 </h3>
                 <div
                   onMouseMove={handleSpotlight}
+                  onTouchStart={handleTouchSpotlight}
+                  onTouchMove={handleTouchSpotlight}
                   data-cursor-quiet
                   className="card-torch bg-light-midnight border border-neon-purple/20 rounded-lg p-6 mb-4 shadow-glow-pink hover:border-neon-purple/50 hover:-translate-y-1 transition-all duration-300 ease-out"
                 >
