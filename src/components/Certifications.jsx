@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { FiExternalLink } from 'react-icons/fi';
 import saaBadge from '../assets/SAA.png';
-import { handleSpotlight, handleTouchSpotlight } from '../utils/spotlight';
+import { handleSpotlight, handleTouchSpotlight, clearTouchSpotlight } from '../utils/spotlight';
 
 const Certifications = () => {
   const sectionRef = useRef(null);
@@ -34,6 +34,8 @@ const Certifications = () => {
     const update = () => {
       frame = null;
       cards.forEach((el) => {
+        // A finger on the card owns the beam; don't fight it mid-drag
+        if (el.dataset.touching) return;
         const rect = el.getBoundingClientRect();
         // 0 as the card enters from the bottom, 1 as it leaves past the top
         const raw = 1 - (rect.top + rect.height) / (window.innerHeight + rect.height);
@@ -112,6 +114,8 @@ const Certifications = () => {
                   onMouseMove={handleSpotlight}
                   onTouchStart={handleTouchSpotlight}
                   onTouchMove={handleTouchSpotlight}
+                  onTouchEnd={clearTouchSpotlight}
+                  onTouchCancel={clearTouchSpotlight}
                   data-cursor-quiet
                   className="card-torch bg-light-midnight border border-neon-purple/20 rounded-lg p-6 mb-4 shadow-glow-pink hover:border-neon-purple/50 hover:-translate-y-1 transition-all duration-300 ease-out"
                 >
