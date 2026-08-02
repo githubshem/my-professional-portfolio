@@ -10,7 +10,8 @@ const SPOTLIGHT = (x, y) =>
 
 --- end spotlight --- */
 
-const HEX = '0123456789ABCDEF';
+// Printable ASCII ! through ~ (94 chars)
+const HEX = String.fromCharCode(...Array.from({ length: 94 }, (_, i) => i + 33));
 const MAX_PARTICLES = 140;
 const SPAWN_SPEED = 1.5;
 const DECAY = 0.014;
@@ -85,7 +86,7 @@ const CustomCursor = () => {
           particles.push({
             x: target.x + (Math.random() - 0.5) * 10,
             y: target.y + (Math.random() - 0.5) * 10,
-            ch: HEX[(Math.random() * 16) | 0],
+            ch: HEX[(Math.random() * HEX.length) | 0],
             vy: 0.35 + Math.random() * 0.5,
             life: 1,
             cyan: Math.random() > 0.55,
