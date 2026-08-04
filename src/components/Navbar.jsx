@@ -107,8 +107,10 @@ const Navbar = () => {
         id="mobile-menu"
         inert={!isMobileMenuOpen}
         aria-hidden={!isMobileMenuOpen}
-        className={`md:hidden fixed top-0 right-0 z-40 h-screen w-3/4 max-w-sm bg-light-midnight/75 backdrop-blur-md border-l border-neon-pink/20 shadow-glow-drawer flex flex-col items-center justify-center gap-2 px-8 transition-transform duration-300 ease-in-out ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`md:hidden fixed top-0 right-0 z-40 h-screen w-3/4 max-w-sm bg-light-midnight/75 backdrop-blur-md border-l border-neon-pink/20 flex flex-col items-center justify-center gap-2 px-8 transition-transform duration-300 ease-in-out ${
+          // The glow is only applied while open — a box-shadow is not clipped by
+          // the transform, so an always-on shadow bleeds back onto the right edge.
+          isMobileMenuOpen ? 'translate-x-0 shadow-glow-drawer' : 'translate-x-full'
         }`}
       >
         {navItems.map((item, i) => (
