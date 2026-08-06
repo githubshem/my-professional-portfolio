@@ -23,7 +23,7 @@ export const projects = [
     title: 'Grafana Alert Provisioning Toolkit',
     description:
       'A provisioning toolkit that compiles an AWS resource inventory and a set of threshold definitions into Grafana alert rules, then applies them as rule groups routed to a Microsoft Teams contact point. Compilation is fully offline and covered by a pytest suite that proves zero drift against a frozen baseline.',
-    tech: ['Grafana', 'Python', 'Amazon CloudWatch', 'Microsoft Teams', 'PowerShell', 'pytest'],
+    tech: ['Grafana', 'Python', 'Amazon CloudWatch', 'Microsoft Power Automate', 'PowerShell'],
     github: 'https://github.com/githubshem/grafana_alerts',
   },
   {
