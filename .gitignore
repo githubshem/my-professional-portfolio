@@ -24,8 +24,7 @@ dist-ssr
 *.sw?
 
 # Personal Assets (keep private)
-src/assets/casual-attire.png
-src/assets/profile-picture.png
+src/assets/
 
 # Backup files
 *.bk
