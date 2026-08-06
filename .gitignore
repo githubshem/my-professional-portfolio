@@ -23,6 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 
+# Personal Assets (keep private)
+src/assets/
+
 # Backup files
 *.bk
 *.backup
