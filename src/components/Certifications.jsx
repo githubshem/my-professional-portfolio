@@ -1,21 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { FiExternalLink } from 'react-icons/fi';
-import saaBadge from '../assets/SAA.png';
 import { handleSpotlight, handleTouchSpotlight, clearTouchSpotlight } from '../utils/spotlight';
+import { certifications } from '../data/certifications';
 
 const Certifications = () => {
   const sectionRef = useRef(null);
-  const certifications = [
-    {
-      name: 'AWS Certified Solutions Architect – Associate',
-      organization: 'Amazon Web Services (AWS)',
-      issueDate: 'March 2024',
-      credentialId: 'baa8bfdf-5cd0-4c84-974b-cb89c48e2c0c',
-      credentialUrl: 'https://www.credly.com/badges/baa8bfdf-5cd0-4c84-974b-cb89c48e2c0c',
-      image: saaBadge,
-      skills: ['AWS', 'Cloud Architecture', 'VPC', 'EC2', 'IAM', 'Amazon EKS', 'Amazon RDS'],
-    },
-  ];
 
   /* Touch has no cursor, so on those devices the beam is driven by how far the
      card has travelled through the viewport: it sweeps down the card as you

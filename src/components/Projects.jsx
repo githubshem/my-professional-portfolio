@@ -1,31 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { FiGithub } from 'react-icons/fi';
+import { projects } from '../data/projects';
 
 const Projects = () => {
-  const projects = [
-    {
-      title: 'Deployment Scripts',
-      description:
-        'Internal deployment automation scripts built at my previous employer to streamline releases, reduce manual steps, and improve consistency across environments.',
-      tech: ['PowerShell', 'PDQ Deploy', 'GitHub'],
-      github: 'https://github.com/githubshem/deployment-tools',
-    },
-    {
-      title: 'YouTrack Ticket Creation',
-      description:
-        'An internal automation script my team and I used daily to streamline administrative tasks and reduce operational friction.',
-      tech: ['JetBrains YouTrack', 'Python', 'Change Management', 'Leadership', 'GitHub'],
-      github: 'https://github.com/githubshem/deployment-tools',
-    },
-    {
-      title: 'RDP into multiple nodes using Powershell Script',
-      description:
-        'A personal PowerShell automation script that cuts down repetitive logins by streamlining Windows Server access across multiple nodes.',
-      tech: ['RDP', 'PowerShell', 'Amazon EC2', 'GitHub', 'Windows Server 2022'],
-      github: 'https://github.com/githubshem/deployment-tools',
-    },
-  ];
-
   /* ==========================================================================
      TOUCH ACTIVATION — JS halves of the options described in index.css.
 

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { site, navItems } from '../config/site';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,14 +43,6 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
-  const navItems = [
-    { number: '01', title: 'About', href: '#about' },
-    { number: '02', title: 'Experience', href: '#experience' },
-    { number: '03', title: 'Work', href: '#projects' },
-    { number: '04', title: 'Certifications', href: '#certifications' },
-    { number: '05', title: 'Contact', href: '#contact' },
-  ];
-
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -60,7 +53,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <a href="#" className="text-neon-pink text-2xl font-mono font-bold hover:text-neon-purple transition-colors neon-text">
-            &lt;PlatformEngineer /&gt;
+            &lt;{site.role} /&gt;
           </a>
 
           {/* Desktop Navigation */}

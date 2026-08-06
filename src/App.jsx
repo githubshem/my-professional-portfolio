@@ -10,13 +10,7 @@ import Footer from './components/Footer';
 import SocialLinks from './components/SocialLinks';
 import Email from './components/Email';
 import CustomCursor from './components/CustomCursor';
-
-const BOOT_LINES = [
-  'shem@tech:~$ ./portfolio --init',
-  'loading modules .......... ok',
-  'applying synthwave theme .. ok',
-  'render --start',
-];
+import { bootLines as BOOT_LINES } from './config/site';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

@@ -1,33 +1,53 @@
 import { FiCode, FiCloud, FiCpu } from 'react-icons/fi';
 import { RiRobot2Line } from 'react-icons/ri';
 import profilePic from '../assets/profile-picture.png';
+import { site } from '../config/site';
+import { skills, focusAreas } from '../data/skills';
+
+const FOCUS_ICONS = {
+  ai: RiRobot2Line,
+  backend: FiCode,
+  cloud: FiCloud,
+  edge: FiCpu,
+};
+
+/**
+ * Accent styles for the focus-area cards, keyed by the `accent` field in
+ * src/data/skills.js.
+ *
+ * Every Tailwind class is written out in full and never interpolated —
+ * Tailwind only generates CSS for class names it can find as complete literals
+ * in the source, so building these by template string would drop the borders
+ * and icon colours without any build error.
+ */
+const ACCENTS = {
+  pink: {
+    card: 'border-neon-pink/30 hover:border-neon-pink',
+    icon: 'text-neon-pink',
+    shadow: '0 0 20px rgba(255, 0, 110, 0.1)',
+    glow: 'drop-shadow(0 0 10px rgba(255, 0, 110, 0.8))',
+  },
+  purple: {
+    card: 'border-neon-purple/30 hover:border-neon-purple',
+    icon: 'text-neon-purple',
+    shadow: '0 0 20px rgba(185, 103, 255, 0.1)',
+    glow: 'drop-shadow(0 0 10px rgba(185, 103, 255, 0.8))',
+  },
+  cyan: {
+    card: 'border-neon-cyan/30 hover:border-neon-cyan',
+    icon: 'text-neon-cyan',
+    shadow: '0 0 20px rgba(5, 217, 232, 0.1)',
+    glow: 'drop-shadow(0 0 10px rgba(5, 217, 232, 0.8))',
+  },
+  magenta: {
+    card: 'border-neon-magenta/30 hover:border-neon-magenta',
+    icon: 'text-neon-magenta',
+    shadow: '0 0 20px rgba(255, 20, 147, 0.1)',
+    glow: 'drop-shadow(0 0 10px rgba(255, 20, 147, 0.8))',
+  },
+};
 
 const About = () => {
-  const skills = [
-    'Amazon Web Services',
-    'Google Cloud Platform',
-    'Microsoft Azure',
-    'Kubernetes',
-    'Python',
-    'Terraform',
-    'PowerShell',
-    'NGINX',
-    'MongoDB',
-    'Git & GitHub',
-    'React.js',
-    'SQL',
-    'Networking',
-    'Linux',
-    'Microsoft Windows',
-    'Bash Script',
-    'GitLab',
-    'Jenkins',
-    'CI/CD',
-    'Golang',
-    'Node.js',
-    'OpenTelemetry',
-  ];
-
   return (
     <section id="about" className="py-24 scroll-mt-24">
       <div className="max-w-6xl mx-auto">
@@ -42,19 +62,19 @@ const About = () => {
             <div className="no-touch-callout relative group">
               {/* Animated Border Effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-cyan rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 motion-safe:animate-pulse"></div>
-              
+
               {/* Profile Image Container */}
               <div className="relative">
                 <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-neon-pink relative">
-                  <img 
-                    src={profilePic} 
-                    alt="Profile" 
+                  <img
+                    src={profilePic}
+                    alt="Profile"
                     className="w-full h-full object-cover"
                   />
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-neon-pink/20 via-transparent to-neon-purple/20 mix-blend-overlay"></div>
                 </div>
-                
+
                 {/* Corner Accents — disabled 2026-08-01, uncomment to restore
                 <div className="absolute -top-2 -left-2 w-8 h-8 border-t-4 border-l-4 border-neon-cyan"></div>
                 <div className="absolute -top-2 -right-2 w-8 h-8 border-t-4 border-r-4 border-neon-pink"></div>
@@ -67,19 +87,9 @@ const About = () => {
 
           {/* About Text */}
           <div className="md:col-span-2 space-y-4 text-slate">
-            <p>
-              I am a passionate engineer building meaningful solutions for my fellow humans, with the goal of making life on Earth feel convenient and companionable.
-            </p>
-            <p>
-              My interest in tech grew when I realized how fast it was evolving, and 
-              I wanted to be part of building what comes next. That curiosity 
-              pushed me to keep learning, experimenting, and turning ideas into real systems.
-            </p>
-            <p>
-              Today, I'm working across companies in different industries and technologies, 
-              continuing the goal I set years ago learning nonstop as the industry keeps evolving.
-            </p>
-            <p>Here are a few technologies I've been working with:</p>
+            {site.about.paragraphs.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
           </div>
         </div>
 
@@ -93,37 +103,21 @@ const About = () => {
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-          <div className="bg-light-midnight p-6 rounded-lg border border-neon-pink/30 hover:border-neon-pink hover:transform hover:-translate-y-2 transition-all" style={{boxShadow: '0 0 20px rgba(255, 0, 110, 0.1)'}}>
-            <RiRobot2Line className="text-neon-pink text-4xl mb-4" style={{filter: 'drop-shadow(0 0 10px rgba(255, 0, 110, 0.8))'}} />
-            <h3 className="text-lightest-slate font-bold text-lg mb-2">Artificial Intelligence</h3>
-            <p className="text-slate text-sm">
-              Implementing MCP servers and schema‑driven tools to integrate LLMs with real systems
-            </p>
-          </div>
-
-          <div className="bg-light-midnight p-6 rounded-lg border border-neon-purple/30 hover:border-neon-purple hover:transform hover:-translate-y-2 transition-all" style={{boxShadow: '0 0 20px rgba(185, 103, 255, 0.1)'}}>
-            <FiCode className="text-neon-purple text-4xl mb-4" style={{filter: 'drop-shadow(0 0 10px rgba(185, 103, 255, 0.8))'}} />
-            <h3 className="text-lightest-slate font-bold text-lg mb-2">Backend Development</h3>
-            <p className="text-slate text-sm">
-              Building and maintaining scalable server-side applications and RESTful APIs
-            </p>
-          </div>
-
-          <div className="bg-light-midnight p-6 rounded-lg border border-neon-cyan/30 hover:border-neon-cyan hover:transform hover:-translate-y-2 transition-all" style={{boxShadow: '0 0 20px rgba(5, 217, 232, 0.1)'}}>
-            <FiCloud className="text-neon-cyan text-4xl mb-4" style={{filter: 'drop-shadow(0 0 10px rgba(5, 217, 232, 0.8))'}} />
-            <h3 className="text-lightest-slate font-bold text-lg mb-2">Cloud & Infrastructure</h3>
-            <p className="text-slate text-sm">
-              Architecting, implementing, and automating scalable cloud infrastructure
-            </p>
-          </div>
-
-          <div className="bg-light-midnight p-6 rounded-lg border border-neon-magenta/30 hover:border-neon-magenta hover:transform hover:-translate-y-2 transition-all" style={{boxShadow: '0 0 20px rgba(255, 20, 147, 0.1)'}}>
-            <FiCpu className="text-neon-magenta text-4xl mb-4" style={{filter: 'drop-shadow(0 0 10px rgba(255, 20, 147, 0.8))'}} />
-            <h3 className="text-lightest-slate font-bold text-lg mb-2">Edge Devices</h3>
-            <p className="text-slate text-sm">
-              Managing self-service kiosk and bag drop fleets with deployment automation and monitoring
-            </p>
-          </div>
+          {focusAreas.map((area) => {
+            const accent = ACCENTS[area.accent];
+            const Icon = FOCUS_ICONS[area.icon];
+            return (
+              <div
+                key={area.title}
+                className={`bg-light-midnight p-6 rounded-lg border ${accent.card} hover:transform hover:-translate-y-2 transition-all`}
+                style={{ boxShadow: accent.shadow }}
+              >
+                <Icon className={`${accent.icon} text-4xl mb-4`} style={{ filter: accent.glow }} />
+                <h3 className="text-lightest-slate font-bold text-lg mb-2">{area.title}</h3>
+                <p className="text-slate text-sm">{area.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

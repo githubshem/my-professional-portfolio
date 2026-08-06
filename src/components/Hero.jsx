@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import casualAttire from '../assets/casual-attire.png';
+import { site } from '../config/site';
 
 const Hero = () => {
     const tiltRef = useRef(null);
@@ -39,13 +40,13 @@ const Hero = () => {
           {/* Hero Text Content */}
           <div className="flex-1 motion-safe:animate-fade-in md:max-w-2xl">
             <h1 className="text-neon-pink font-mono text-base md:text-lg mb-5 neon-text">
-              Hi there, I am
+              {site.hero.greeting}
             </h1>
             <h2 className="text-lightest-slate font-bold text-4xl md:text-6xl lg:text-7xl mb-6" style={{textShadow: '0 0 20px rgba(255, 0, 110, 0.5), 0 0 40px rgba(185, 28, 46, 0.3)'}}>
-              Shem
+              {site.name}
             </h2>
             <h3 className="text-light-slate font-semibold text-xl md:text-2xl lg:text-3xl leading-snug mb-10 max-w-xl">
-              I work at the layer where electrical signals become computation and where computation becomes the experiences people see online.
+              {site.hero.tagline}
             </h3>
             {/* Stacked and full-width on phones so the two CTAs share an edge
                 and give a full-width tap target; unchanged from sm upwards. */}
@@ -55,13 +56,13 @@ const Hero = () => {
                 className="btn-sheen no-touch-callout block w-full sm:w-auto text-center px-8 py-4 border-2 border-neon-pink text-neon-pink rounded font-mono text-sm hover:bg-neon-pink/10 hover:shadow-neon-pink transition-all"
                 style={{textShadow: '0 0 10px rgba(255, 0, 110, 0.8)'}}
               >
-                Check out my work!
+                {site.hero.primaryCta}
               </a>
               <a
                 href="#contact"
                 className="no-touch-callout block w-full sm:w-auto text-center px-8 py-4 border border-neon-cyan/50 text-neon-cyan rounded font-mono text-sm hover:border-neon-cyan hover:bg-neon-cyan/10 hover:shadow-neon-cyan transition-all"
               >
-                Get in touch
+                {site.hero.secondaryCta}
               </a>
             </div>
           </div>
@@ -123,7 +124,7 @@ const Hero = () => {
                       <div className="absolute bottom-0 left-0 right-0 bg-midnight/70 backdrop-blur-sm border-t border-neon-pink/20 py-2.5 px-4">
                         <p className="flex items-center gap-2 font-mono text-xs text-light-slate">
                           <span className="text-neon-pink" style={{textShadow: '0 0 8px rgba(255, 0, 110, 0.6)'}}>&gt;</span>
-                          <span>shem<span className="text-neon-pink">@</span>tech:~$ status --online</span>
+                          <span>{site.terminal.user}<span className="text-neon-pink">@</span>{site.terminal.host}:~$ {site.hero.status}</span>
                           <span className="cursor-blink inline-block w-2 h-3.5 bg-neon-pink/80"
                                 style={{boxShadow: '0 0 6px rgba(255, 0, 110, 0.5)'}}></span>
                         </p>
