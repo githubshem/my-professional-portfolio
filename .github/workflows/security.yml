@@ -19,34 +19,13 @@ concurrency:
   group: security-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# CodeQL is deliberately absent here. This repository uses CodeQL *default
+# setup* (Settings > Advanced Security), which already scans javascript-typescript
+# and actions on a weekly schedule and on pull requests. GitHub rejects SARIF
+# from an advanced workflow while default setup is enabled, so the two cannot
+# coexist. To move to an advanced configuration instead, disable default setup
+# first, then add a job using github/codeql-action.
 jobs:
-  codeql:
-    name: CodeQL
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    permissions:
-      contents: read
-      security-events: write
-      actions: read
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v5
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v4
-        with:
-          languages: javascript-typescript
-          # Default queries plus the lower-severity and higher-precision-cost
-          # security rules. Drop to `security-and-quality` only if you also want
-          # maintainability findings in the Security tab.
-          queries: security-extended
-
-      # No build step: CodeQL extracts JS and JSX directly from source.
-      - name: Perform CodeQL analysis
-        uses: github/codeql-action/analyze@v4
-        with:
-          category: "/language:javascript-typescript"
-
   audit:
     name: npm audit
     runs-on: ubuntu-latest
