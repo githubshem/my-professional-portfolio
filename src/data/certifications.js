@@ -9,6 +9,6 @@ export const certifications = [
     credentialId: 'baa8bfdf-5cd0-4c84-974b-cb89c48e2c0c',
     credentialUrl: 'https://www.credly.com/badges/baa8bfdf-5cd0-4c84-974b-cb89c48e2c0c',
     image: saaBadge,
-    skills: ['AWS', 'Cloud Architecture', 'VPC', 'EC2', 'IAM', 'Amazon EKS', 'Amazon RDS'],
+    skills: ['AWS', 'Cloud Architecture', 'VPC', 'EC2', 'S3', 'Amazon EKS', 'Amazon RDS'],
   },
 ];

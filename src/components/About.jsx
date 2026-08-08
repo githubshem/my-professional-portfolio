@@ -2,7 +2,7 @@ import { FiCode, FiCloud, FiCpu } from 'react-icons/fi';
 import { RiRobot2Line } from 'react-icons/ri';
 import profilePic from '../assets/profile-picture.png';
 import { site } from '../config/site';
-import { skills, focusAreas } from '../data/skills';
+import { skillDomains, focusAreas } from '../data/skills';
 
 const FOCUS_ICONS = {
   ai: RiRobot2Line,
@@ -12,13 +12,26 @@ const FOCUS_ICONS = {
 };
 
 /**
- * Accent styles for the focus-area cards, keyed by the `accent` field in
- * src/data/skills.js.
+ * Accent styles for the skill-domain headings, keyed by the `accent` field on
+ * each entry of `skillDomains`.
  *
  * Every Tailwind class is written out in full and never interpolated —
  * Tailwind only generates CSS for class names it can find as complete literals
- * in the source, so building these by template string would drop the borders
- * and icon colours without any build error.
+ * in the source, so building these by template string would drop the colours
+ * without any build error. The same rule governs ACCENTS below.
+ */
+const DOMAIN_ACCENTS = {
+  cyan: { label: 'text-neon-cyan', rule: 'bg-neon-cyan/20' },
+  pink: { label: 'text-neon-pink', rule: 'bg-neon-pink/20' },
+  purple: { label: 'text-neon-purple', rule: 'bg-neon-purple/20' },
+  magenta: { label: 'text-neon-magenta', rule: 'bg-neon-magenta/20' },
+  blue: { label: 'text-neon-blue', rule: 'bg-neon-blue/20' },
+  'bright-pink': { label: 'text-neon-pink-bright', rule: 'bg-neon-pink-bright/20' },
+};
+
+/**
+ * Accent styles for the focus-area cards, keyed by the `accent` field on each
+ * entry of `focusAreas`. Full literals only, same reason as above.
  */
 const ACCENTS = {
   pink: {
@@ -56,9 +69,12 @@ const About = () => {
           About Me
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        {/* items-center, not the default stretch: the About copy is short by
+            design, so centring it against the photo splits the leftover height
+            evenly instead of pooling it all under the text. */}
+        <div className="grid md:grid-cols-3 gap-12 mb-16 md:items-center">
           {/* Profile Picture with Synthwave Effects */}
-          <div className="md:col-span-1 flex justify-center items-start">
+          <div className="md:col-span-1 flex justify-center">
             <div className="no-touch-callout relative group">
               {/* Animated Border Effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-cyan rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 motion-safe:animate-pulse"></div>
@@ -86,20 +102,40 @@ const About = () => {
           </div>
 
           {/* About Text */}
-          <div className="md:col-span-2 space-y-4 text-slate">
+          <div className="md:col-span-2 space-y-4 text-slate text-lg max-w-2xl">
             {site.about.paragraphs.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-8">
-          {skills.map((skill, index) => (
-            <div key={index} className="flex items-center text-slate font-mono text-sm">
-              <span className="text-neon-pink mr-2">▹</span>
-              {skill}
-            </div>
-          ))}
+        {site.about.skillsLead && (
+          <p className="text-slate font-mono text-sm mb-6">{site.about.skillsLead}</p>
+        )}
+
+        <div className="space-y-8">
+          {skillDomains.map((domain) => {
+            const accent = DOMAIN_ACCENTS[domain.accent];
+            return (
+              <div key={domain.title}>
+                <div className="flex items-center gap-3 mb-3">
+                  <h3
+                    className={`${accent.label} font-mono text-xs uppercase tracking-[0.2em] whitespace-nowrap`}
+                  >
+                    {domain.title}
+                  </h3>
+                  <span className={`${accent.rule} h-px flex-1`} aria-hidden="true" />
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-6">
+                  {domain.items.map((skill) => (
+                    <div key={skill} className="text-slate font-mono text-sm">
+                      {skill}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">

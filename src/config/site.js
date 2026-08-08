@@ -24,7 +24,9 @@ export const site = {
   },
 
   hero: {
-    greeting: 'Hi there, I am',
+    // The hero kicker renders as a shell prompt built from `terminal` above,
+    // and the name below it reads as this command's output.
+    command: 'whoami',
     tagline:
       'I work at the layer where electrical signals become computation and where computation becomes the experiences people see online.',
     primaryCta: 'Check out my work!',
@@ -34,11 +36,11 @@ export const site = {
 
   about: {
     paragraphs: [
-      'I am a passionate engineer building meaningful solutions for my fellow humans, with the goal of making life on Earth feel convenient and companionable.',
-      'My interest in tech grew when I realized how fast it was evolving, and I wanted to be part of building what comes next. That curiosity pushed me to keep learning, experimenting, and turning ideas into real systems.',
-      "Today, I'm working across companies in different industries and technologies, continuing the goal I set years ago learning nonstop as the industry keeps evolving.",
-      "Here are a few technologies I've been working with:",
+      'I am an engineer who loves working in tech. I explore, build, experiment and ship projects.',
     ],
+    // Rendered directly above the skill domains rather than in the block beside
+    // the photo, so the colon lands next to the list it introduces.
+    skillsLead: 'Here are the list of technologies that I have worked with:',
   },
 
   contact: {

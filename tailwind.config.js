@@ -17,6 +17,9 @@ export default {
         'neon-purple': '#b967ff',
         'neon-cyan': '#05d9e8',
         'neon-magenta': '#ff1493',
+        // Sixth accent for the skill-domain labels. electric-violet only reaches
+        // 3.3:1 on midnight and fails WCAG AA at label size; this clears 7:1.
+        'neon-blue': '#4d9fff',
         'electric-violet': '#8a2be2',
         'lighter-midnight': '#2a2a3e',
         'neon-pink-bright': '#ff5c8f',
