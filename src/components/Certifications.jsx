@@ -124,7 +124,7 @@ const Certifications = () => {
                     href={cert.credentialUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-neon-purple transition-colors"
+                    className="inline-flex items-center justify-center w-11 h-11 -ml-2.5 hover:text-neon-purple transition-colors"
                   >
                     <FiExternalLink className="text-2xl" />
                   </a>

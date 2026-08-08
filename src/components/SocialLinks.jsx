@@ -13,7 +13,9 @@ const railLinks = socialLinks.filter((social) => social.id !== 'email');
 const SocialLinks = () => {
   return (
     <div className="hidden md:block fixed left-8 bottom-0 z-10">
-      <ul className="flex flex-col items-center gap-6 after:content-[''] after:block after:w-px after:h-24 after:bg-light-slate after:mt-6">
+      {/* gap-0 like the footer rail: the 44px tap targets supply the spacing
+          the old gap-6 used to, so the icons sit exactly where they did. */}
+      <ul className="flex flex-col items-center gap-0 after:content-[''] after:block after:w-px after:h-24 after:bg-light-slate after:mt-6">
         {railLinks.map((social) => {
           const Icon = ICONS[social.id];
           return (
@@ -22,7 +24,7 @@ const SocialLinks = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-light-slate hover:text-neon-pink hover:-translate-y-1 transition-all block"
+                className="inline-flex items-center justify-center w-11 h-11 text-light-slate hover:text-neon-pink hover:-translate-y-1 transition-all"
                 aria-label={social.label}
               >
                 <Icon className="text-xl" />

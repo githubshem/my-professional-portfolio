@@ -81,7 +81,7 @@ const Projects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${project.title} on GitHub`}
-                  className="p-2 text-lightest-slate hover:text-neon-pink transition-colors"
+                  className="p-2.5 text-lightest-slate hover:text-neon-pink transition-colors"
                 >
                   <FiGithub className="text-2xl" />
                 </a>

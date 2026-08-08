@@ -24,9 +24,6 @@ export const site = {
   },
 
   hero: {
-    // The hero kicker renders as a shell prompt built from `terminal` above,
-    // and the name below it reads as this command's output.
-    command: 'whoami',
     tagline:
       'I work at the layer where electrical signals become computation and where computation becomes the experiences people see online.',
     primaryCta: 'Check out my work!',

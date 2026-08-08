@@ -52,7 +52,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="flex justify-between items-center h-24">
           {/* Logo */}
-          <a href="#" className="text-neon-pink text-2xl font-mono font-bold hover:text-neon-purple transition-colors neon-text">
+          <a href="#" className="inline-flex items-center min-h-[44px] text-neon-pink text-2xl font-mono font-bold hover:text-neon-purple transition-colors neon-text">
             &lt;{site.role} /&gt;
           </a>
 

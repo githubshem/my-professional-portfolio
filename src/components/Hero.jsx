@@ -39,23 +39,14 @@ const Hero = () => {
         <div className="w-full relative z-10 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
           {/* Hero Text Content */}
           <div className="flex-1 motion-safe:animate-fade-in md:max-w-2xl">
-            {/* The kicker is a shell prompt and the name is its output, so the
-                two sit tight together as one exchange. Deliberately unlike the
-                status line under the photo: cyan host, no blinking caret —
-                that card owns the caret, this is a query, not a status. */}
-            <h1 className="font-mono text-sm md:text-base mb-3 text-slate">
-              <span className="text-neon-pink">{site.terminal.user}</span>
-              <span className="text-slate/50">@</span>
-              <span className="text-neon-cyan">{site.terminal.host}</span>
-              <span className="text-slate/50">:~$</span>{' '}
-              {site.hero.command}
-            </h1>
-            <h2 className="text-lightest-slate font-bold text-4xl md:text-5xl lg:text-6xl mb-5" style={{textShadow: '0 0 20px rgba(255, 0, 110, 0.5), 0 0 40px rgba(185, 28, 46, 0.3)'}}>
+            {/* No kicker: the name opens the page, so it carries the h1 and the
+                tagline steps down under it. */}
+            <h1 className="text-lightest-slate font-bold text-3xl md:text-4xl lg:text-5xl mb-5" style={{textShadow: '0 0 20px rgba(255, 0, 110, 0.5), 0 0 40px rgba(185, 28, 46, 0.3)'}}>
               {site.name}
-            </h2>
-            <h3 className="text-slate text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
+            </h1>
+            <p className="text-slate text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
               {site.hero.tagline}
-            </h3>
+            </p>
             {/* Stacked and full-width on phones so the two CTAs share an edge
                 and give a full-width tap target; unchanged from sm upwards. */}
             <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4">

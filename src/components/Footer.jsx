@@ -12,7 +12,9 @@ const githubUrl = socialLinks.find((social) => social.id === 'github').url;
 const Footer = () => {
   return (
     <footer className="py-8 text-center">
-      <div className="md:hidden flex justify-center gap-6 mb-6">
+      {/* gap-0 is deliberate: each link is padded out to a 44px tap target, so
+          the padding itself supplies the 24px the old gap-6 used to. */}
+      <div className="md:hidden flex justify-center gap-0 mb-6">
         {socialLinks.map((social) => {
           const Icon = ICONS[social.id];
           return (
@@ -21,7 +23,7 @@ const Footer = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light-slate hover:text-neon-pink transition-colors"
+              className="inline-flex items-center justify-center w-11 h-11 text-light-slate hover:text-neon-pink transition-colors"
               aria-label={social.label}
             >
               <Icon className="text-xl" />

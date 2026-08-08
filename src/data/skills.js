@@ -107,27 +107,27 @@ export const focusAreas = [
     accent: 'pink',
     title: 'Artificial Intelligence',
     description:
-      'Implementing MCP servers and schema‑driven tools to integrate LLMs with real systems',
+      'Connecting LLMs to real systems through MCP servers, typed tool schemas, and retrieval pipelines',
   },
   {
     icon: 'backend',
     accent: 'purple',
     title: 'Backend Development',
     description:
-      'Building and maintaining scalable server-side applications and RESTful APIs',
+      'Services and APIs in Node.js and Go, with the data, caching, and auth layers behind them',
   },
   {
     icon: 'cloud',
     accent: 'cyan',
     title: 'Cloud & Infrastructure',
     description:
-      'Architecting, implementing, and automating scalable cloud infrastructure',
+      'Provisioning and automating AWS with Terraform, delivered through Jenkins and watched by Grafana',
   },
   {
     icon: 'edge',
     accent: 'magenta',
     title: 'Edge Devices',
     description:
-      'Managing self-service kiosk and bag drop fleets with deployment automation and monitoring',
+      'Keeping airport self-service fleets running: kiosks, bag drop, and passenger reconciliation',
   },
 ];
