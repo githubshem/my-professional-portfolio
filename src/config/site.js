@@ -24,8 +24,10 @@ export const site = {
   },
 
   hero: {
+    // Opens with the name so this one sentence can carry the hero on its own.
+    // Keep `site.name` spelled verbatim inside it: the hero highlights that word.
     tagline:
-      'I work at the layer where electrical signals become computation and where computation becomes the experiences people see online.',
+      "Hey I'm Shem, I work at the layer where electrical signals become computation and where computation becomes the experiences people see online.",
     primaryCta: 'Check out my work!',
     secondaryCta: 'Get in touch',
     status: 'status --online',
