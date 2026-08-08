@@ -1,0 +1,95 @@
+name: Security
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  # Advisories are published after code is merged, so re-scan on a timer to
+  # catch dependencies that turn vulnerable while sitting untouched.
+  schedule:
+    - cron: "27 5 * * 1"
+  workflow_dispatch:
+
+# Least privilege by default. Jobs widen this only where they must.
+permissions:
+  contents: read
+
+concurrency:
+  group: security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  codeql:
+    name: CodeQL
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: javascript-typescript
+          # Default queries plus the lower-severity and higher-precision-cost
+          # security rules. Drop to `security-and-quality` only if you also want
+          # maintainability findings in the Security tab.
+          queries: security-extended
+
+      # No build step: CodeQL extracts JS and JSX directly from source.
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: "/language:javascript-typescript"
+
+  audit:
+    name: npm audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "npm"
+
+      # `npm audit` reads package-lock.json, so no install is needed.
+      # This gate covers what actually reaches a visitor's browser. It is the
+      # blocking check.
+      - name: Audit runtime dependencies
+        run: npm audit --omit=dev --audit-level=high
+
+      # Build-time and lint-time packages never ship to the site, so a finding
+      # here is worth knowing about but is not a reason to fail the branch.
+      - name: Audit all dependencies (informational)
+        if: ${{ always() }}
+        continue-on-error: true
+        run: npm audit --audit-level=high
+
+  dependency-review:
+    name: Dependency review
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      # Blocks a pull request that introduces a known-vulnerable package before
+      # it lands, rather than reporting it after the fact.
+      - name: Review dependency changes
+        uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high
+          comment-summary-in-pr: on-failure
