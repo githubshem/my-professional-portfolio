@@ -70,8 +70,32 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="card-pulse bg-light-midnight border border-neon-pink/20 rounded-lg p-8 shadow-glow-pink transition-all duration-300 ease-out hover:border-neon-cyan/50 hover:-translate-y-2"
+              className="card-pulse group bg-light-midnight border border-neon-pink/20 rounded-lg p-8 shadow-glow-pink transition-all duration-300 ease-out hover:border-neon-cyan/50 hover:-translate-y-2"
             >
+              {/* Optional cover art. Cards without a `cover` render exactly as
+                  they always have — the strip is additive, never required.
+                  alt is empty on purpose: the art is decorative and the <h3>
+                  below already names the project for screen readers. */}
+              {project.cover && (
+                <div className="relative -mt-2 mb-6 overflow-hidden rounded-md ring-1 ring-neon-cyan/20">
+                  <img
+                    src={project.cover}
+                    alt=""
+                    width="1920"
+                    height="409"
+                    loading="lazy"
+                    decoding="async"
+                    className="h-36 w-full object-cover transition-transform duration-500 ease-out motion-safe:group-hover:scale-105 md:h-44"
+                  />
+                  {/* Fades the art down into the card so it reads as part of the
+                      surface rather than a pasted-on screenshot. */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-light-midnight via-transparent to-transparent"
+                  />
+                </div>
+              )}
+
               <div className="flex items-start justify-between gap-4 mb-4">
                 <h3 className="text-lightest-slate text-2xl font-bold">
                   {project.title}
