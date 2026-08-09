@@ -13,11 +13,21 @@ updates:
       day: "monday"
     open-pull-requests-limit: 5
     # Grouped so a quiet week produces two pull requests rather than ten.
+    #
+    # Majors are deliberately left out of the groups. On 2026-08-08 a single
+    # grouped dev-dependency PR carried tailwindcss 3 -> 4 and
+    # eslint-plugin-react-hooks 5 -> 7; both needed config migrations that the
+    # bump did not include, the build failed on the moved PostCSS plugin, and
+    # production shipped without styles. Excluded from a group, each major
+    # still arrives as its own pull request, where one red build points at one
+    # package instead of nine.
     groups:
       production-dependencies:
         dependency-type: "production"
+        update-types: ["minor", "patch"]
       development-dependencies:
         dependency-type: "development"
+        update-types: ["minor", "patch"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
