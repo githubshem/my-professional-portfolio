@@ -2,6 +2,17 @@ import { useRef } from 'react';
 import casualAttire from '../assets/casual-attire.png';
 import { site } from '../config/site';
 
+/**
+ * The name is highlighted inline rather than set as its own heading, so the
+ * sentence has to be split around it. site.js documents that the tagline must
+ * spell `site.name` verbatim; if that ever stops being true the sentence still
+ * renders whole, just without the glow.
+ */
+const nameAt = site.hero.tagline.indexOf(site.name);
+const taglineBefore = nameAt === -1 ? site.hero.tagline : site.hero.tagline.slice(0, nameAt);
+const taglineName = nameAt === -1 ? '' : site.name;
+const taglineAfter = nameAt === -1 ? '' : site.hero.tagline.slice(nameAt + site.name.length);
+
 const Hero = () => {
     const tiltRef = useRef(null);
 
@@ -39,14 +50,19 @@ const Hero = () => {
         <div className="w-full relative z-10 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
           {/* Hero Text Content */}
           <div className="flex-1 motion-safe:animate-fade-in md:max-w-2xl">
-            {/* No kicker: the name opens the page, so it carries the h1 and the
-                tagline steps down under it. */}
-            <h1 className="text-lightest-slate font-bold text-3xl md:text-4xl lg:text-5xl mb-5" style={{textShadow: '0 0 20px rgba(255, 0, 110, 0.5), 0 0 40px rgba(185, 28, 46, 0.3)'}}>
-              {site.name}
+            {/* One statement, no kicker: the name is the glowing word inside
+                the sentence rather than a heading above it, so the sentence
+                itself carries the h1. */}
+            <h1 className="text-slate text-lg md:text-xl leading-relaxed mb-10">
+              {taglineBefore}
+              <span
+                className="font-bold text-neon-pink-bright"
+                style={{ textShadow: '0 0 18px rgba(255, 0, 110, 0.75), 0 0 40px rgba(185, 28, 46, 0.45)' }}
+              >
+                {taglineName}
+              </span>
+              {taglineAfter}
             </h1>
-            <p className="text-slate text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
-              {site.hero.tagline}
-            </p>
             {/* Stacked and full-width on phones so the two CTAs share an edge
                 and give a full-width tap target; unchanged from sm upwards. */}
             <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4">
