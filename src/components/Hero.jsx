@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import casualAttire from '../assets/casual-attire.png';
+import casualAttire from '../assets/casual-attire.webp';
 import { site } from '../config/site';
 
 /**

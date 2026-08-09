@@ -1,6 +1,6 @@
 import { FiCode, FiCloud, FiCpu } from 'react-icons/fi';
 import { RiRobot2Line } from 'react-icons/ri';
-import profilePic from '../assets/profile-picture.png';
+import profilePic from '../assets/profile-picture.webp';
 import { site } from '../config/site';
 import { skillDomains, focusAreas } from '../data/skills';
 
